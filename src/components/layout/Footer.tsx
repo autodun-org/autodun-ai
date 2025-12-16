@@ -5,11 +5,9 @@ export function Footer() {
     <footer className="border-t border-border py-6 md:py-8 mt-auto bg-secondary/30">
       <div className="container-narrow">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-baseline">
-            <span className="text-sm font-medium text-muted-foreground">
-              <StylisedA className="text-muted-foreground" />
-              <span>utodun</span>
-            </span>
+          <div className="flex items-end">
+            <StylisedA className="text-muted-foreground" />
+            <span className="text-sm font-medium text-muted-foreground leading-none pb-[2px]">utodun</span>
           </div>
           
           <p className="text-xs text-muted-foreground text-center md:text-right max-w-lg leading-relaxed">

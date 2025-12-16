@@ -22,11 +22,9 @@ export function Header() {
       <div className="container-narrow">
         <div className="flex h-14 items-center justify-between">
           {/* Typographic Logo */}
-          <Link to="/" className="flex items-baseline shrink-0 group">
-            <span className="font-semibold text-lg tracking-tight text-foreground">
-              <StylisedA className="text-foreground" />
-              <span>utodun</span>
-            </span>
+          <Link to="/" className="flex items-end shrink-0 group">
+            <StylisedA className="text-foreground" />
+            <span className="font-semibold text-lg tracking-tight text-foreground leading-none pb-[3px]">utodun</span>
           </Link>
 
           {/* Desktop Navigation */}
