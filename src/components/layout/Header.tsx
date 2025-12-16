@@ -20,7 +20,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-narrow">
-        <div className="flex h-14 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo Badge */}
           <Link to="/" className="shrink-0">
             <LogoMark size="md" />
