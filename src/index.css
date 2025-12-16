@@ -156,9 +156,9 @@
     @apply py-16 md:py-24 lg:py-[96px];
   }
   
-  /* Standard page section padding */
+  /* Standard page section padding: 96px desktop, 64px mobile */
   .section-padding {
-    @apply py-14 md:py-20 lg:py-24;
+    @apply py-16 md:py-24;
   }
   
   .prose-body {
