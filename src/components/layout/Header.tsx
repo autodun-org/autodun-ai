@@ -22,10 +22,10 @@ export function Header() {
       <div className="container-narrow">
         <div className="flex h-14 items-center justify-between">
           {/* Logo Wordmark */}
-          <Link to="/" className="shrink-0">
-            <span className="font-bold text-lg tracking-wide text-foreground uppercase inline-flex items-baseline">
-              <LogoMark size="md" className="text-foreground" />
-              <span className="ml-[0.05em]">utodun</span>
+          <Link to="/" className="shrink-0 flex items-center gap-1">
+            <LogoMark size="md" className="text-foreground" />
+            <span className="font-bold text-base tracking-wide text-foreground uppercase">
+              utodun
             </span>
           </Link>
 

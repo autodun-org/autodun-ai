@@ -7,10 +7,10 @@ interface LogoMarkProps {
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
   const sizes = {
-    sm: "h-[1.1em] w-[1.1em]",
-    md: "h-[1.25em] w-[1.25em]",
-    lg: "h-10 w-10",
-    xl: "h-14 w-14",
+    sm: "h-4 w-4",
+    md: "h-6 w-6",
+    lg: "h-12 w-12",
+    xl: "h-16 w-16",
   };
 
   return (
@@ -18,7 +18,7 @@ export function LogoMark({ className, size = "md" }: LogoMarkProps) {
       viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(sizes[size], "inline-block align-baseline", className)}
+      className={cn(sizes[size], className)}
       aria-label="A"
     >
       {/* Outer ring - badge/authority feel */}

@@ -36,11 +36,13 @@ export default function Index() {
           <div className="max-w-2xl">
             {/* Wordmark with integrated logo */}
             <div className="mb-6">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase inline-flex items-baseline">
-                <LogoMark size="lg" className="text-foreground" />
-                <span className="ml-[0.05em]">utodun</span>
-              </h1>
-              <p className="text-sm font-medium text-primary mt-3 tracking-wide uppercase">
+              <div className="flex items-center gap-2 mb-3">
+                <LogoMark size="xl" className="text-foreground" />
+                <span className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase">
+                  utodun
+                </span>
+              </div>
+              <p className="text-sm font-medium text-primary tracking-wide uppercase">
                 Vehicle AI & Data Platform
               </p>
             </div>
