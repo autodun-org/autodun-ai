@@ -19,10 +19,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="container-narrow">
-        <div className="flex h-20 items-center justify-between">
+      <div className="container-narrow py-2">
+        <div className="flex items-center justify-between">
           {/* Logo Badge */}
-          <Link to="/" className="shrink-0">
+          <Link to="/" className="shrink-0 flex items-center">
             <LogoMark size="md" />
           </Link>
 

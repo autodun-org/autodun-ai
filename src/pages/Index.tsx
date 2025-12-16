@@ -33,29 +33,31 @@ export default function Index() {
       {/* Hero Section */}
       <section className="section-padding border-b border-border">
         <div className="container-narrow">
-          <div className="max-w-2xl">
-            {/* Logo Badge */}
-            <div className="mb-6">
-              <LogoMark size="xl" className="mb-4" />
-              <p className="text-sm font-medium text-primary tracking-wide uppercase">
-                Vehicle AI & Data Platform
-              </p>
-            </div>
+          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+            {/* Logo */}
+            <LogoMark size="xl" className="mb-6" />
             
-            <p className="text-base md:text-lg prose-body mb-8 md:mb-10 max-w-xl">
+            {/* Subtitle */}
+            <p className="text-sm font-medium text-primary tracking-wide uppercase mb-6">
+              Vehicle AI & Data Platform
+            </p>
+            
+            {/* Description */}
+            <p className="text-base md:text-lg prose-body mb-8 md:mb-10 max-w-xl leading-relaxed">
               An independent platform delivering AI-driven tools for vehicle data analysis, 
               EV infrastructure research, and MOT risk prediction. Built for research 
               and decision-support applications.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 mb-8 md:mb-10">
-              <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-8 md:mb-10 w-full sm:w-auto sm:justify-center">
+              <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto h-11">
                 <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                   Open EV Charger Finder
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto">
+              <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto h-11">
                 <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
                   Open MOT Predictor
                   <ArrowRight className="h-4 w-4" />
@@ -63,7 +65,8 @@ export default function Index() {
               </Button>
             </div>
 
-            <p className="text-xs text-muted-foreground border-l-2 border-border pl-4">
+            {/* Disclaimer */}
+            <p className="text-xs text-muted-foreground border-l-2 border-border pl-4 text-left">
               Not official DVSA or government advice. Research and educational use only.
             </p>
           </div>
