@@ -16,9 +16,9 @@ export function LogoMark({ className, size = "md", variant = "dark", animated = 
   };
 
   const isDark = variant === "dark";
-  const textColor = isDark ? "hsl(220, 30%, 18%)" : "hsl(210, 40%, 98%)";
-  const lineColor = "hsl(200, 50%, 60%)";
-  const nodeColor = "hsl(200, 60%, 50%)";
+  const textColor = isDark ? "hsl(210, 40%, 98%)" : "hsl(220, 30%, 18%)";
+  const lineColor = "hsl(200, 50%, 65%)";
+  const nodeColor = "hsl(200, 60%, 55%)";
 
   return (
     <svg
