@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
-import { ArrowRight, AlertTriangle, Zap, MapPin, BarChart3, Database, Search, Navigation, Star, MessageSquare, Brain, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, AlertTriangle, Zap, MapPin, BarChart3, Database, Search, Navigation, Star, MessageSquare, Brain, TrendingUp, Users, ExternalLink } from "lucide-react";
 
 const capabilities = [
   { icon: MapPin, label: "Charging Location Discovery", description: "Find and explore EV charging points across regions" },
@@ -66,12 +66,20 @@ export default function EVChargerFinder() {
               </p>
             </div>
 
-            <Button asChild size="lg" className="gap-2 font-medium animate-fade-in-up w-full sm:w-auto" style={{ animationDelay: "100ms" }}>
-              <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
-                Open EV Charger Finder
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+              <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
+                <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
+                  Open EV Charger Finder
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto">
+                <a href="https://ev.autodun.com/ev-charging-council-dashboard" target="_blank" rel="noopener noreferrer">
+                  Council Analytics Dashboard
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

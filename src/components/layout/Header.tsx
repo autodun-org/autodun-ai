@@ -8,6 +8,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "EV Charger Finder", href: "/ev-charger-finder" },
   { name: "MOT Predictor", href: "/mot-predictor" },
+  { name: "Council Dashboard", href: "https://ev.autodun.com/ev-charging-council-dashboard", external: true },
   { name: "Data Usage", href: "/data-usage" },
   { name: "About", href: "/about" },
 ];
@@ -36,17 +37,30 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  isActive(item.href)
-                    ? "text-foreground bg-secondary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                }`}
-              >
-                {item.name}
-              </Link>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/50 inline-flex items-center gap-1"
+                >
+                  {item.name}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                    isActive(item.href)
+                      ? "text-foreground bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
 
@@ -80,18 +94,32 @@ export function Header() {
           <div className="lg:hidden border-t border-border py-4 animate-fade-in">
             <div className="flex flex-col gap-1">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                    isActive(item.href)
-                      ? "text-foreground bg-secondary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                  }`}
-                >
-                  {item.name}
-                </Link>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3 py-2.5 text-sm font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/50 inline-flex items-center gap-1"
+                  >
+                    {item.name}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
+                      isActive(item.href)
+                        ? "text-foreground bg-secondary"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <div className="pt-3 mt-2 border-t border-border">
                 <Button asChild className="w-full gap-2">

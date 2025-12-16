@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
-import { Shield, Database, Lock, FileCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Shield, Database, Lock, FileCheck, ArrowRight, ExternalLink } from "lucide-react";
 
 const principles = [
   {
@@ -98,6 +99,35 @@ export default function DataUsage() {
                 protection principles. If you have questions about our data practices, please 
                 refer to our technical documentation or contact us through the appropriate channels.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Tools */}
+      <section className="section-padding">
+        <div className="container-main">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Related Tools
+            </p>
+            <h2 className="mb-6 text-2xl sm:text-3xl">Explore Our Analytics</h2>
+            <p className="prose-body mb-8">
+              Our analytics tools are built with the same commitment to responsible data use.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild className="gap-2">
+                <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
+                  EV Charger Finder
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="gap-2">
+                <a href="https://ev.autodun.com/ev-charging-council-dashboard" target="_blank" rel="noopener noreferrer">
+                  Council Analytics Dashboard
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
