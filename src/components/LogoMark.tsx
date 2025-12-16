@@ -7,8 +7,8 @@ interface LogoMarkProps {
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
   const sizes = {
-    sm: "h-6 w-6",
-    md: "h-8 w-8",
+    sm: "h-[1.1em] w-[1.1em]",
+    md: "h-[1.25em] w-[1.25em]",
     lg: "h-10 w-10",
     xl: "h-14 w-14",
   };
@@ -18,8 +18,8 @@ export function LogoMark({ className, size = "md" }: LogoMarkProps) {
       viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(sizes[size], className)}
-      aria-label="Autodun logo"
+      className={cn(sizes[size], "inline-block align-baseline", className)}
+      aria-label="A"
     >
       {/* Outer ring - badge/authority feel */}
       <circle
@@ -41,24 +41,37 @@ export function LogoMark({ className, size = "md" }: LogoMarkProps) {
         fill="none"
       />
       
-      {/* Abstract road/path - forward motion, vehicle trajectory */}
-      <path
-        d="M14 28L24 18L34 28"
+      {/* Geometric "A" form */}
+      {/* Left leg of A */}
+      <line
+        x1="14"
+        y1="34"
+        x2="24"
+        y2="14"
         stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
       />
       
-      {/* Horizon line - road baseline */}
+      {/* Right leg of A */}
       <line
-        x1="14"
-        y1="32"
-        x2="34"
-        y2="32"
+        x1="34"
+        y1="34"
+        x2="24"
+        y2="14"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      
+      {/* Crossbar of A */}
+      <line
+        x1="17"
+        y1="28"
+        x2="31"
+        y2="28"
+        stroke="currentColor"
+        strokeWidth="2.5"
         strokeLinecap="round"
       />
     </svg>

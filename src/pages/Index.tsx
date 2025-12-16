@@ -34,13 +34,13 @@ export default function Index() {
       <section className="section-padding border-b border-border">
         <div className="container-narrow">
           <div className="max-w-2xl">
-            {/* Centered Logo + Wordmark */}
-            <div className="flex flex-col items-start mb-8">
-              <LogoMark size="xl" className="text-foreground mb-4" />
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase">
-                Autodun
+            {/* Wordmark with integrated logo */}
+            <div className="mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase inline-flex items-baseline">
+                <LogoMark size="lg" className="text-foreground" />
+                <span className="ml-[0.05em]">utodun</span>
               </h1>
-              <p className="text-sm font-medium text-primary mt-2 tracking-wide uppercase">
+              <p className="text-sm font-medium text-primary mt-3 tracking-wide uppercase">
                 Vehicle AI & Data Platform
               </p>
             </div>
