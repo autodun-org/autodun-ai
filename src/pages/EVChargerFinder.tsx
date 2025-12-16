@@ -34,7 +34,7 @@ export default function EVChargerFinder() {
             </div>
 
             <Button asChild size="lg" className="gap-2 font-medium animate-fade-in-up" style={{ animationDelay: "100ms" }}>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                 Open EV Charger Finder
                 <ArrowRight className="h-4 w-4" />
               </a>
