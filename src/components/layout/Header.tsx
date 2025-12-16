@@ -21,12 +21,9 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-narrow">
         <div className="flex h-14 items-center justify-between">
-          {/* Logo Wordmark */}
-          <Link to="/" className="shrink-0 flex items-center gap-1">
-            <LogoMark size="md" className="text-foreground" />
-            <span className="font-bold text-base tracking-wide text-foreground uppercase">
-              utodun
-            </span>
+          {/* Logo Badge */}
+          <Link to="/" className="shrink-0">
+            <LogoMark size="md" />
           </Link>
 
           {/* Desktop Navigation */}

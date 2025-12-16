@@ -5,12 +5,7 @@ export function Footer() {
     <footer className="border-t border-border py-6 md:py-8 mt-auto bg-secondary/30">
       <div className="container-narrow">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-1">
-            <LogoMark size="sm" className="text-muted-foreground" />
-            <span className="font-bold text-sm tracking-wide text-muted-foreground uppercase">
-              utodun
-            </span>
-          </div>
+          <LogoMark size="sm" />
           
           <p className="text-xs text-muted-foreground text-center md:text-right max-w-lg leading-relaxed">
             Independent AI/ML research platform. Not affiliated with or endorsed by DVSA or any government agency.

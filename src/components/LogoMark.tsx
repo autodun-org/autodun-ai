@@ -7,71 +7,133 @@ interface LogoMarkProps {
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
   const sizes = {
-    sm: "h-4 w-4",
-    md: "h-6 w-6",
-    lg: "h-12 w-12",
-    xl: "h-16 w-16",
+    sm: "h-8 w-8",
+    md: "h-10 w-10",
+    lg: "h-16 w-16",
+    xl: "h-24 w-24",
   };
 
   return (
     <svg
-      viewBox="0 0 48 48"
+      viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(sizes[size], className)}
-      aria-label="A"
+      aria-label="AUTODUN"
     >
-      {/* Outer ring - badge/authority feel */}
-      <circle
-        cx="24"
-        cy="24"
-        r="22"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        fill="none"
-      />
+      {/* Dark navy background circle */}
+      <circle cx="50" cy="50" r="48" fill="hsl(222, 47%, 11%)" />
       
-      {/* Inner ring - precision, inspection grade */}
+      {/* Outer white ring */}
       <circle
-        cx="24"
-        cy="24"
-        r="16"
-        stroke="currentColor"
+        cx="50"
+        cy="50"
+        r="46"
+        stroke="white"
         strokeWidth="1.5"
         fill="none"
       />
       
-      {/* Geometric "A" form */}
-      {/* Left leg of A */}
+      {/* Inner white ring */}
+      <circle
+        cx="50"
+        cy="50"
+        r="42"
+        stroke="white"
+        strokeWidth="0.75"
+        fill="none"
+      />
+      
+      {/* Abstract road/apex - forward motion symbol */}
+      {/* Left lane line */}
       <line
-        x1="14"
-        y1="34"
-        x2="24"
-        y2="14"
-        stroke="currentColor"
-        strokeWidth="3"
+        x1="30"
+        y1="45"
+        x2="50"
+        y2="22"
+        stroke="white"
+        strokeWidth="2"
         strokeLinecap="round"
       />
       
-      {/* Right leg of A */}
+      {/* Right lane line */}
       <line
-        x1="34"
-        y1="34"
-        x2="24"
-        y2="14"
-        stroke="currentColor"
-        strokeWidth="3"
+        x1="70"
+        y1="45"
+        x2="50"
+        y2="22"
+        stroke="white"
+        strokeWidth="2"
         strokeLinecap="round"
       />
       
-      {/* Crossbar of A */}
+      {/* Center dashed road line */}
       <line
-        x1="17"
+        x1="50"
         y1="28"
-        x2="31"
+        x2="50"
+        y2="35"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <line
+        x1="50"
+        y1="39"
+        x2="50"
+        y2="46"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      
+      {/* Minimal data nodes - subtle intelligence indicator */}
+      <circle cx="35" cy="38" r="1.5" fill="white" />
+      <circle cx="65" cy="38" r="1.5" fill="white" />
+      <circle cx="50" cy="22" r="2" fill="white" />
+      
+      {/* Subtle connection lines from apex */}
+      <line
+        x1="52"
+        y1="23"
+        x2="58"
         y2="28"
-        stroke="currentColor"
-        strokeWidth="2.5"
+        stroke="white"
+        strokeWidth="0.75"
+        strokeLinecap="round"
+      />
+      <line
+        x1="48"
+        y1="23"
+        x2="42"
+        y2="28"
+        stroke="white"
+        strokeWidth="0.75"
+        strokeLinecap="round"
+      />
+      
+      {/* AUTODUN text */}
+      <text
+        x="50"
+        y="62"
+        textAnchor="middle"
+        fill="white"
+        fontSize="10"
+        fontWeight="700"
+        fontFamily="system-ui, -apple-system, sans-serif"
+        letterSpacing="0.5"
+      >
+        AUTODUN
+      </text>
+      
+      {/* Subtle underline accent */}
+      <line
+        x1="28"
+        y1="67"
+        x2="72"
+        y2="67"
+        stroke="white"
+        strokeWidth="0.5"
         strokeLinecap="round"
       />
     </svg>
