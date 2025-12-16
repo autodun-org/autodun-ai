@@ -7,135 +7,79 @@ interface LogoMarkProps {
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
   const sizes = {
-    sm: "h-8 w-8",
-    md: "h-10 w-10",
-    lg: "h-16 w-16",
-    xl: "h-24 w-24",
+    sm: "h-6",
+    md: "h-8",
+    lg: "h-12",
+    xl: "h-16",
   };
 
   return (
     <svg
-      viewBox="0 0 100 100"
+      viewBox="0 0 200 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(sizes[size], className)}
+      className={cn(sizes[size], "w-auto", className)}
       aria-label="AUTODUN"
     >
-      {/* Dark navy background circle */}
-      <circle cx="50" cy="50" r="48" fill="hsl(222, 47%, 11%)" />
+      {/* Circuit-style square border */}
+      {/* Top border with circuit nodes */}
+      <line x1="0" y1="0" x2="60" y2="0" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="60" cy="0" r="2" fill="hsl(217, 91%, 60%)" />
+      <line x1="64" y1="0" x2="140" y2="0" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="140" cy="0" r="2" fill="hsl(217, 91%, 60%)" />
+      <line x1="144" y1="0" x2="200" y2="0" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
       
-      {/* Outer white ring */}
-      <circle
-        cx="50"
-        cy="50"
-        r="46"
-        stroke="white"
-        strokeWidth="1.5"
-        fill="none"
-      />
+      {/* Right border with circuit nodes */}
+      <line x1="200" y1="0" x2="200" y2="18" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="200" cy="18" r="1.5" fill="hsl(217, 91%, 60%)" />
+      <line x1="200" y1="21" x2="200" y2="32" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="200" cy="32" r="1.5" fill="hsl(217, 91%, 60%)" />
+      <line x1="200" y1="35" x2="200" y2="50" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
       
-      {/* Inner white ring */}
-      <circle
-        cx="50"
-        cy="50"
-        r="42"
-        stroke="white"
-        strokeWidth="0.75"
-        fill="none"
-      />
+      {/* Bottom border with circuit nodes */}
+      <line x1="200" y1="50" x2="150" y2="50" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="150" cy="50" r="2" fill="hsl(217, 91%, 60%)" />
+      <line x1="146" y1="50" x2="54" y2="50" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="54" cy="50" r="2" fill="hsl(217, 91%, 60%)" />
+      <line x1="50" y1="50" x2="0" y2="50" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
       
-      {/* Abstract road/apex - forward motion symbol */}
-      {/* Left lane line */}
-      <line
-        x1="30"
-        y1="45"
-        x2="50"
-        y2="22"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
+      {/* Left border with circuit nodes */}
+      <line x1="0" y1="50" x2="0" y2="35" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="0" cy="35" r="1.5" fill="hsl(217, 91%, 60%)" />
+      <line x1="0" y1="32" x2="0" y2="18" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
+      <circle cx="0" cy="18" r="1.5" fill="hsl(217, 91%, 60%)" />
+      <line x1="0" y1="15" x2="0" y2="0" stroke="hsl(222, 47%, 20%)" strokeWidth="1.5" />
       
-      {/* Right lane line */}
-      <line
-        x1="70"
-        y1="45"
-        x2="50"
-        y2="22"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
+      {/* Corner circuit details */}
+      {/* Top-left corner */}
+      <line x1="0" y1="8" x2="8" y2="8" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
+      <line x1="8" y1="0" x2="8" y2="8" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
       
-      {/* Center dashed road line */}
-      <line
-        x1="50"
-        y1="28"
-        x2="50"
-        y2="35"
-        stroke="white"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <line
-        x1="50"
-        y1="39"
-        x2="50"
-        y2="46"
-        stroke="white"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+      {/* Top-right corner */}
+      <line x1="192" y1="8" x2="200" y2="8" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
+      <line x1="192" y1="0" x2="192" y2="8" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
       
-      {/* Minimal data nodes - subtle intelligence indicator */}
-      <circle cx="35" cy="38" r="1.5" fill="white" />
-      <circle cx="65" cy="38" r="1.5" fill="white" />
-      <circle cx="50" cy="22" r="2" fill="white" />
+      {/* Bottom-right corner */}
+      <line x1="192" y1="42" x2="200" y2="42" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
+      <line x1="192" y1="42" x2="192" y2="50" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
       
-      {/* Subtle connection lines from apex */}
-      <line
-        x1="52"
-        y1="23"
-        x2="58"
-        y2="28"
-        stroke="white"
-        strokeWidth="0.75"
-        strokeLinecap="round"
-      />
-      <line
-        x1="48"
-        y1="23"
-        x2="42"
-        y2="28"
-        stroke="white"
-        strokeWidth="0.75"
-        strokeLinecap="round"
-      />
+      {/* Bottom-left corner */}
+      <line x1="0" y1="42" x2="8" y2="42" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
+      <line x1="8" y1="42" x2="8" y2="50" stroke="hsl(222, 47%, 25%)" strokeWidth="0.75" />
       
       {/* AUTODUN text */}
       <text
-        x="50"
-        y="62"
+        x="100"
+        y="32"
         textAnchor="middle"
-        fill="white"
-        fontSize="10"
-        fontWeight="700"
+        fill="hsl(222, 47%, 11%)"
+        fontSize="22"
+        fontWeight="800"
         fontFamily="system-ui, -apple-system, sans-serif"
-        letterSpacing="0.5"
+        letterSpacing="4"
       >
         AUTODUN
       </text>
-      
-      {/* Subtle underline accent */}
-      <line
-        x1="28"
-        y1="67"
-        x2="72"
-        y2="67"
-        stroke="white"
-        strokeWidth="0.5"
-        strokeLinecap="round"
-      />
     </svg>
   );
 }
