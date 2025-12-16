@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, AlertTriangle, Gauge, Calendar, Fuel, History, Play, Car, Brain, BarChart3, FileText, Shield } from "lucide-react";
+import { MOTDemo } from "@/components/demos/MOTDemo";
+import { ArrowRight, AlertTriangle, Gauge, Calendar, Fuel, History, Car, Brain, BarChart3, FileText, Shield } from "lucide-react";
 
 const inputs = [
   { icon: Calendar, label: "Vehicle Age", description: "Years since first registration" },
@@ -64,35 +65,9 @@ export default function MOTPredictor() {
             </p>
           </div>
           
-          {/* Video Placeholder */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="video-placeholder">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                  <Play className="h-7 w-7 text-primary ml-1" />
-                </div>
-                <p className="text-sm font-medium text-foreground mb-1">MOT Predictor Demo</p>
-                <p className="text-xs text-muted-foreground text-center max-w-sm">
-                  Enter details • AI analysis • Risk score • Guidance notes
-                </p>
-              </div>
-              
-              {/* Window controls */}
-              <div className="absolute top-4 left-4 right-4">
-                <div className="flex gap-2">
-                  <div className="h-2 w-2 rounded-full bg-destructive/60" />
-                  <div className="h-2 w-2 rounded-full bg-amber-500/60" />
-                  <div className="h-2 w-2 rounded-full bg-green-500/60" />
-                </div>
-              </div>
-              
-              {/* Progress bar */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="h-1 bg-border rounded-full overflow-hidden">
-                  <div className="h-full w-1/2 bg-primary/40 rounded-full" />
-                </div>
-              </div>
-            </div>
+          {/* Animated Demo */}
+          <div className="max-w-4xl mx-auto mb-12 aspect-[16/10]">
+            <MOTDemo />
           </div>
 
           {/* Step-by-step flow */}

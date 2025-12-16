@@ -1,8 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/LogoMark";
-import { ArrowRight, Zap, MapPin, BarChart3, Play, Shield } from "lucide-react";
-
+import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
+import { ArrowRight, Zap, MapPin, BarChart3, Shield } from "lucide-react";
 const tools = [
   {
     icon: Zap,
@@ -78,50 +78,9 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right - Video Placeholder */}
-            <div className="hidden lg:block">
-              <div className="video-placeholder">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                    <Play className="h-7 w-7 text-primary ml-1" />
-                  </div>
-                  <p className="text-sm font-medium text-foreground mb-1">Platform Overview</p>
-                  <p className="text-xs text-muted-foreground text-center max-w-xs">
-                    EV Charger maps • MOT Risk analysis • Council analytics
-                  </p>
-                </div>
-                
-                {/* Simulated UI elements */}
-                <div className="absolute top-4 left-4 right-4">
-                  <div className="flex gap-2">
-                    <div className="h-2 w-2 rounded-full bg-destructive/60" />
-                    <div className="h-2 w-2 rounded-full bg-amber-500/60" />
-                    <div className="h-2 w-2 rounded-full bg-green-500/60" />
-                  </div>
-                </div>
-                
-                {/* Bottom bar simulation */}
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="h-1 bg-border rounded-full overflow-hidden">
-                    <div className="h-full w-1/3 bg-primary/40 rounded-full" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile video placeholder */}
-            <div className="lg:hidden">
-              <div className="video-placeholder">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-3 border border-primary/20">
-                    <Play className="h-6 w-6 text-primary ml-0.5" />
-                  </div>
-                  <p className="text-sm font-medium text-foreground mb-1">Platform Overview</p>
-                  <p className="text-xs text-muted-foreground text-center">
-                    EV maps • MOT analysis • Council insights
-                  </p>
-                </div>
-              </div>
+            {/* Right - Animated Demo */}
+            <div className="w-full aspect-[16/10]">
+              <EVChargerDemo />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, AlertTriangle, Zap, MapPin, BarChart3, Database, Play, Search, Navigation, Star, MessageSquare, Brain, TrendingUp, Users } from "lucide-react";
+import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
+import { ArrowRight, AlertTriangle, Zap, MapPin, BarChart3, Database, Search, Navigation, Star, MessageSquare, Brain, TrendingUp, Users } from "lucide-react";
 
 const capabilities = [
   { icon: MapPin, label: "Charging Location Discovery", description: "Find and explore EV charging points across regions" },
@@ -90,35 +91,9 @@ export default function EVChargerFinder() {
             </p>
           </div>
           
-          {/* Video Placeholder */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="video-placeholder">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                  <Play className="h-7 w-7 text-primary ml-1" />
-                </div>
-                <p className="text-sm font-medium text-foreground mb-1">Platform Overview</p>
-                <p className="text-xs text-muted-foreground text-center max-w-sm">
-                  Search locations • View charging stations • Submit feedback • AI scoring
-                </p>
-              </div>
-              
-              {/* Window controls */}
-              <div className="absolute top-4 left-4 right-4">
-                <div className="flex gap-2">
-                  <div className="h-2 w-2 rounded-full bg-destructive/60" />
-                  <div className="h-2 w-2 rounded-full bg-amber-500/60" />
-                  <div className="h-2 w-2 rounded-full bg-green-500/60" />
-                </div>
-              </div>
-              
-              {/* Progress bar */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="h-1 bg-border rounded-full overflow-hidden">
-                  <div className="h-full w-2/3 bg-primary/40 rounded-full" />
-                </div>
-              </div>
-            </div>
+          {/* Animated Demo */}
+          <div className="max-w-4xl mx-auto mb-12 aspect-[16/10]">
+            <EVChargerDemo />
           </div>
 
           {/* Step-by-step flow */}
