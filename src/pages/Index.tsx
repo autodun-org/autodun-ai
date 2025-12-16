@@ -35,16 +35,7 @@ export default function Index() {
         <div className="container-narrow">
           <div className="flex flex-col items-center text-center">
             {/* Hero Logo */}
-            <span 
-              className="block font-bold tracking-tight text-foreground mb-3"
-              style={{ 
-                fontSize: 'clamp(48px, 6vw, 88px)', 
-                lineHeight: 1.1,
-                fontFamily: 'inherit'
-              }}
-            >
-              AUTODUN
-            </span>
+            <LogoMark size="hero" className="mb-3" />
             
             {/* Subtitle */}
             <p className="text-xs font-medium text-primary tracking-wide uppercase mb-4">
