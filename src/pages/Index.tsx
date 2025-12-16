@@ -36,7 +36,7 @@ export default function Index() {
           <div className="max-w-2xl">
             {/* Logo Badge */}
             <div className="mb-6">
-              <LogoMark size="lg" className="mb-4" />
+              <LogoMark size="xl" variant="dark" className="mb-4" />
               <p className="text-sm font-medium text-primary tracking-wide uppercase">
                 Vehicle AI & Data Platform
               </p>
