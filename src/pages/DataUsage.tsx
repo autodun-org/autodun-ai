@@ -30,12 +30,12 @@ export default function DataUsage() {
       {/* Hero */}
       <section className="section-padding border-b border-border">
         <div className="container-narrow">
-          <div className="max-w-2xl animate-fade-in">
-            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+          <div className="max-w-2xl animate-fade-in-up">
+            <h1 className="mb-6">
               Data Usage & Responsibility
             </h1>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg prose-body max-w-xl">
               Autodun is committed to responsible and transparent use of vehicle data. 
               This page outlines our data handling practices and the principles that 
               guide our approach to data processing.
@@ -47,21 +47,26 @@ export default function DataUsage() {
       {/* Principles */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-semibold mb-8">Our Data Principles</h2>
+          <div className="mb-10">
+            <h2 className="mb-3">Our Data Principles</h2>
+            <p className="prose-body max-w-xl">
+              Core commitments governing how we handle and process data.
+            </p>
+          </div>
           
-          <div className="space-y-6">
+          <div className="space-y-4">
             {principles.map((principle, index) => (
               <div 
                 key={principle.title}
-                className="flex gap-4 p-6 rounded-lg border border-border bg-card animate-fade-in"
+                className="flex gap-5 p-6 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+                <div className="h-10 w-10 rounded-md bg-secondary flex items-center justify-center shrink-0">
                   <principle.icon className="h-5 w-5 text-foreground" />
                 </div>
                 <div>
                   <h3 className="font-medium mb-2">{principle.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm prose-body">
                     {principle.description}
                   </p>
                 </div>
@@ -72,20 +77,20 @@ export default function DataUsage() {
       </section>
 
       {/* Summary */}
-      <section className="section-padding bg-secondary/30 border-y border-border">
+      <section className="section-padding bg-secondary/40 border-y border-border">
         <div className="container-narrow">
           <div className="max-w-2xl">
-            <h2 className="font-semibold mb-4">Summary</h2>
-            <div className="prose prose-sm text-muted-foreground">
-              <p className="leading-relaxed">
+            <h2 className="mb-4">Summary</h2>
+            <div className="space-y-4 prose-body">
+              <p>
                 Autodun processes vehicle data for research and analytical purposes. We maintain 
                 strict data governance practices to ensure that vehicle information is handled 
-                responsibly and in compliance with applicable regulations. Our platform is designed 
-                to provide valuable insights while respecting data protection principles.
+                responsibly and in compliance with applicable regulations.
               </p>
-              <p className="leading-relaxed mt-4">
-                If you have questions about our data practices, please refer to our technical 
-                documentation or contact us through the appropriate channels.
+              <p>
+                Our platform is designed to provide valuable insights while respecting data 
+                protection principles. If you have questions about our data practices, please 
+                refer to our technical documentation or contact us through the appropriate channels.
               </p>
             </div>
           </div>

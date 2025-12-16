@@ -30,22 +30,23 @@ export default function About() {
       {/* Hero */}
       <section className="section-padding border-b border-border">
         <div className="container-narrow">
-          <div className="max-w-2xl animate-fade-in">
-            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+          <div className="max-w-2xl animate-fade-in-up">
+            <h1 className="mb-6">
               About Autodun
             </h1>
             
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Autodun is an independent AI/ML research project focused on vehicle data analysis 
-              and predictive modelling. Our work centres on developing practical tools for 
-              understanding vehicle populations and associated risks.
-            </p>
-            
-            <p className="text-muted-foreground leading-relaxed">
-              The platform is designed to serve researchers, analysts, and decision-makers who 
-              require data-driven insights into vehicle-related questions. Our approach emphasises 
-              transparency, reproducibility, and practical utility.
-            </p>
+            <div className="space-y-4 text-lg prose-body max-w-xl">
+              <p>
+                Autodun is an independent AI/ML research project focused on vehicle data analysis 
+                and predictive modelling. Our work centres on developing practical tools for 
+                understanding vehicle populations and associated risks.
+              </p>
+              <p>
+                The platform is designed to serve researchers, analysts, and decision-makers who 
+                require data-driven insights into vehicle-related questions. Our approach emphasises 
+                transparency, reproducibility, and practical utility.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -53,20 +54,25 @@ export default function About() {
       {/* Research Goals */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-semibold mb-8">Research Goals</h2>
+          <div className="mb-10">
+            <h2 className="mb-3">Research Goals</h2>
+            <p className="prose-body max-w-xl">
+              Core objectives guiding our research and development work.
+            </p>
+          </div>
           
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-5">
             {goals.map((goal, index) => (
               <div 
                 key={goal.title}
-                className="p-6 rounded-lg border border-border bg-card animate-fade-in"
+                className="p-6 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center mb-4">
+                <div className="h-10 w-10 rounded-md bg-secondary flex items-center justify-center mb-4">
                   <goal.icon className="h-5 w-5 text-foreground" />
                 </div>
                 <h3 className="font-medium mb-2">{goal.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm prose-body">
                   {goal.description}
                 </p>
               </div>
@@ -76,22 +82,22 @@ export default function About() {
       </section>
 
       {/* Technical Approach */}
-      <section className="section-padding bg-secondary/30 border-y border-border">
+      <section className="section-padding bg-secondary/40 border-y border-border">
         <div className="container-narrow">
           <div className="max-w-2xl">
-            <h2 className="font-semibold mb-4">Technical Approach</h2>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <p className="leading-relaxed">
+            <h2 className="mb-4">Technical Approach</h2>
+            <div className="space-y-4 prose-body">
+              <p>
                 Our models are built using established machine learning techniques, trained on 
                 UK-style vehicle and MOT data. We prioritise model interpretability and provide 
                 clear documentation of our methodologies.
               </p>
-              <p className="leading-relaxed">
+              <p>
                 Autodun operates independently and is not affiliated with or endorsed by DVSA 
                 or any government agency. Our tools are intended for research and educational 
                 purposes, providing supplementary analysis rather than official determinations.
               </p>
-              <p className="leading-relaxed">
+              <p>
                 The platform is continuously developed, with ongoing work to improve model 
                 accuracy, expand analytical capabilities, and ensure responsible data use.
               </p>

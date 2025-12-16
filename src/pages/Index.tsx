@@ -1,28 +1,28 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, MapPin, BarChart3, Globe } from "lucide-react";
+import { ArrowRight, Zap, MapPin, BarChart3, Cpu, Database, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const features = [
+const capabilities = [
   {
     icon: MapPin,
-    title: "EV Charger Discovery",
-    description: "Explore EV charging locations and infrastructure coverage using public datasets and analytics.",
-  },
-  {
-    icon: Zap,
-    title: "Infrastructure Analytics",
-    description: "Analyse charger availability, coverage gaps, and infrastructure planning data for research purposes.",
+    title: "EV Infrastructure Analytics",
+    description: "Explore charging locations, coverage analysis, and infrastructure planning data using public datasets.",
   },
   {
     icon: BarChart3,
-    title: "Public Charging Analysis",
-    description: "Tools for understanding EV adoption trends and public charging network distribution.",
+    title: "Vehicle Risk Modelling",
+    description: "AI-driven analysis to estimate MOT failure probability based on historical patterns and vehicle data.",
   },
   {
-    icon: Globe,
-    title: "MOT Risk Modelling",
-    description: "AI-driven analysis to estimate vehicle MOT failure probability based on historical patterns.",
+    icon: Database,
+    title: "Large-Scale Data Processing",
+    description: "Tools for analysing vehicle populations, trends, and patterns across comprehensive datasets.",
+  },
+  {
+    icon: Shield,
+    title: "Research-Grade Tools",
+    description: "Transparent, reproducible machine learning models designed for research and decision-support.",
   },
 ];
 
@@ -32,27 +32,32 @@ export default function Index() {
       {/* Hero Section */}
       <section className="section-padding border-b border-border">
         <div className="container-narrow">
-          <div className="max-w-2xl animate-fade-in">
-            <p className="text-sm font-medium text-primary mb-4 tracking-wide uppercase">
-              Vehicle AI & Data Platform
-            </p>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-balance">
-              Autodun
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Autodun builds AI-driven tools using vehicle data for research and decision-support. 
-              Our platform focuses on EV charging infrastructure analytics, MOT risk prediction, 
-              and research-grade machine learning models.
-            </p>
+          <div className="max-w-2xl">
+            <div className="animate-fade-in-up">
+              <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+                Vehicle AI & Data Platform
+              </p>
+              <h1 className="mb-6 text-balance">
+                Autodun
+              </h1>
+              <p className="text-lg prose-body mb-10 max-w-xl">
+                An independent platform delivering AI-driven tools for vehicle data analysis, 
+                EV infrastructure research, and MOT risk prediction. Built for research 
+                and decision-support applications.
+              </p>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button asChild size="lg" className="gap-2">
+            <div 
+              className="flex flex-col sm:flex-row gap-3 mb-10 animate-fade-in-up"
+              style={{ animationDelay: "100ms" }}
+            >
+              <Button asChild size="lg" className="gap-2 font-medium">
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   Open EV Charger Finder
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="gap-2">
+              <Button asChild variant="outline" size="lg" className="gap-2 font-medium">
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   Open MOT Predictor
                   <ArrowRight className="h-4 w-4" />
@@ -60,31 +65,39 @@ export default function Index() {
               </Button>
             </div>
 
-            <p className="text-xs text-muted-foreground border-l-2 border-border pl-4">
+            <p 
+              className="text-xs text-muted-foreground border-l-2 border-border pl-4 animate-fade-in"
+              style={{ animationDelay: "200ms" }}
+            >
               Not official DVSA or government advice. Research and educational use only.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Capabilities Section */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-semibold mb-12">Platform Capabilities</h2>
+          <div className="mb-12">
+            <h2 className="mb-3">Platform Capabilities</h2>
+            <p className="prose-body max-w-xl">
+              Core analytical tools for vehicle data research and infrastructure analysis.
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
+          <div className="grid md:grid-cols-2 gap-6">
+            {capabilities.map((item, index) => (
               <div 
-                key={feature.title}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+                key={item.title}
+                className="p-5 card-elevated animate-fade-in-up"
+                style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center mb-4">
-                  <feature.icon className="h-5 w-5 text-foreground" />
+                <div className="h-9 w-9 rounded-md bg-secondary flex items-center justify-center mb-4">
+                  <item.icon className="h-4.5 w-4.5 text-foreground" />
                 </div>
-                <h3 className="font-medium mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
+                <h3 className="font-medium mb-2">{item.title}</h3>
+                <p className="text-sm prose-body">
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -92,43 +105,56 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Active Tools Section */}
-      <section className="section-padding bg-secondary/30 border-y border-border">
+      {/* Available Tools Section */}
+      <section className="section-padding bg-secondary/40 border-y border-border">
         <div className="container-narrow">
-          <p className="text-xs font-medium text-primary mb-6 tracking-wide uppercase">
-            Available Tools
-          </p>
+          <div className="mb-10">
+            <p className="text-xs font-medium text-primary mb-2 tracking-wide uppercase">
+              Available Tools
+            </p>
+            <h2>Active Platform Tools</h2>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-lg border border-border bg-card">
-              <div className="flex items-center gap-2 mb-3">
-                <Zap className="h-5 w-5 text-primary" />
-                <h3 className="font-semibold">EV Charger Finder & Infrastructure Analytics</h3>
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="p-6 card-elevated">
+              <div className="flex items-start justify-between mb-4">
+                <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
+                  <Zap className="h-5 w-5 text-primary" />
+                </div>
+                <span className="badge-active">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Active
+                </span>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
+              <h3 className="font-semibold mb-2">EV Charger Finder & Infrastructure Analytics</h3>
+              <p className="text-sm prose-body mb-5">
                 Explore EV charging locations, infrastructure coverage, and public charging data analysis.
               </p>
-              <Button asChild size="sm" className="gap-2">
+              <Button asChild size="sm" variant="outline" className="gap-2">
                 <Link to="/ev-charger-finder">
                   View Details
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
             </div>
 
-            <div className="p-6 rounded-lg border border-border bg-card">
-              <div className="flex items-center gap-2 mb-3">
-                <BarChart3 className="h-5 w-5 text-primary" />
-                <h3 className="font-semibold">MOT Failure Risk Predictor</h3>
-                <span className="text-xs px-2 py-0.5 rounded bg-primary/10 text-primary font-medium">Beta</span>
+            <div className="p-6 card-elevated">
+              <div className="flex items-start justify-between mb-4">
+                <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
+                  <Cpu className="h-5 w-5 text-primary" />
+                </div>
+                <span className="badge-beta">
+                  Beta
+                </span>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
+              <h3 className="font-semibold mb-2">MOT Failure Risk Predictor</h3>
+              <p className="text-sm prose-body mb-5">
                 AI-generated risk assessment based on vehicle characteristics and historical patterns.
               </p>
-              <Button asChild size="sm" className="gap-2">
+              <Button asChild size="sm" variant="outline" className="gap-2">
                 <Link to="/mot-predictor">
                   View Details
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
             </div>
