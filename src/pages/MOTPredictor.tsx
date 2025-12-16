@@ -53,11 +53,11 @@ export default function MOTPredictor() {
       {/* Animated Explainer Video Section */}
       <section className="section-major">
         <div className="container-main">
-          <div className="text-center section-header">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+          <div className="text-center mb-8">
+            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               Platform Demo
             </p>
-            <h2 className="mb-3 text-2xl sm:text-3xl">
+            <h2 className="mb-4 text-2xl sm:text-3xl">
               How MOT Failure Risk Is Predicted
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -104,11 +104,11 @@ export default function MOTPredictor() {
       {/* Model Inputs */}
       <section className="section-major">
         <div className="container-main">
-          <div className="section-header">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+          <div className="mb-8">
+            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               Input Parameters
             </p>
-            <h2 className="mb-3 text-2xl sm:text-3xl">Model Inputs</h2>
+            <h2 className="mb-4 text-2xl sm:text-3xl">Model Inputs</h2>
             <p className="prose-body max-w-xl">
               The prediction model uses the following vehicle characteristics.
             </p>
