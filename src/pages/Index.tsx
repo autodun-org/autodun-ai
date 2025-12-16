@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { LogoMark } from "@/components/LogoMark";
 import { ArrowRight, Zap, MapPin, BarChart3, Cpu, Database, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -33,12 +34,17 @@ export default function Index() {
       <section className="section-padding border-b border-border">
         <div className="container-narrow">
           <div className="max-w-2xl">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
-              Vehicle AI & Data Platform
-            </p>
-            <h1 className="mb-6 text-balance">
-              Autodun
-            </h1>
+            {/* Centered Logo + Wordmark */}
+            <div className="flex flex-col items-start mb-8">
+              <LogoMark size="xl" className="text-foreground mb-4" />
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase">
+                Autodun
+              </h1>
+              <p className="text-sm font-medium text-primary mt-2 tracking-wide uppercase">
+                Vehicle AI & Data Platform
+              </p>
+            </div>
+            
             <p className="text-base md:text-lg prose-body mb-8 md:mb-10 max-w-xl">
               An independent platform delivering AI-driven tools for vehicle data analysis, 
               EV infrastructure research, and MOT risk prediction. Built for research 
