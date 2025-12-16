@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, AlertTriangle, Gauge, Calendar, Fuel, History } from "lucide-react";
+import { ArrowRight, AlertTriangle, Gauge, Calendar, Fuel, History, Play, Car, Brain, BarChart3, FileText, Shield } from "lucide-react";
 
 const inputs = [
   { icon: Calendar, label: "Vehicle Age", description: "Years since first registration" },
@@ -9,19 +9,26 @@ const inputs = [
   { icon: History, label: "Previous MOT Failures", description: "Historical test failure count" },
 ];
 
+const videoSteps = [
+  { icon: Car, label: "Enter Vehicle Details", description: "Input age, mileage, and fuel type" },
+  { icon: Brain, label: "AI Processing", description: "Model analyses historical MOT data" },
+  { icon: BarChart3, label: "Risk Calculation", description: "Failure probability computed" },
+  { icon: FileText, label: "View Results", description: "Risk score and guidance displayed" },
+];
+
 export default function MOTPredictor() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding border-b border-border">
-        <div className="container-narrow">
+      <section className="section-padding border-b border-border hero-gradient">
+        <div className="container-main">
           <div className="max-w-2xl">
             <div className="animate-fade-in-up">
               <span className="badge-beta mb-6">
                 Beta
               </span>
               
-              <h1 className="mb-6">
+              <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl">
                 MOT Failure Risk Predictor
               </h1>
               
@@ -32,7 +39,7 @@ export default function MOTPredictor() {
               </p>
             </div>
 
-            <Button asChild size="lg" className="gap-2 font-medium animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+            <Button asChild size="lg" className="gap-2 font-medium animate-fade-in-up w-full sm:w-auto" style={{ animationDelay: "100ms" }}>
               <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
                 Launch MOT Predictor Tool
                 <ArrowRight className="h-4 w-4" />
@@ -42,28 +49,108 @@ export default function MOTPredictor() {
         </div>
       </section>
 
+      {/* Animated Explainer Video Section */}
+      <section className="section-padding">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Platform Demo
+            </p>
+            <h2 className="mb-4 text-2xl sm:text-3xl">
+              How MOT Failure Risk Is Predicted
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Understand how our AI model processes vehicle data to estimate MOT failure probability.
+            </p>
+          </div>
+          
+          {/* Video Placeholder */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="video-placeholder">
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
+                  <Play className="h-7 w-7 text-primary ml-1" />
+                </div>
+                <p className="text-sm font-medium text-foreground mb-1">MOT Predictor Demo</p>
+                <p className="text-xs text-muted-foreground text-center max-w-sm">
+                  Enter details • AI analysis • Risk score • Guidance notes
+                </p>
+              </div>
+              
+              {/* Window controls */}
+              <div className="absolute top-4 left-4 right-4">
+                <div className="flex gap-2">
+                  <div className="h-2 w-2 rounded-full bg-destructive/60" />
+                  <div className="h-2 w-2 rounded-full bg-amber-500/60" />
+                  <div className="h-2 w-2 rounded-full bg-green-500/60" />
+                </div>
+              </div>
+              
+              {/* Progress bar */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="h-1 bg-border rounded-full overflow-hidden">
+                  <div className="h-full w-1/2 bg-primary/40 rounded-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step-by-step flow */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {videoSteps.map((step, index) => (
+              <div 
+                key={step.label}
+                className="text-center p-5 rounded-xl bg-secondary/30 border border-border/50"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <step.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div className="step-number mx-auto mb-3 text-xs">{index + 1}</div>
+                <p className="text-sm font-medium text-foreground mb-1">{step.label}</p>
+                <p className="text-xs text-muted-foreground">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research-Grade Disclaimer Banner */}
+      <section className="py-8 bg-primary/5 border-y border-primary/10">
+        <div className="container-main">
+          <div className="flex items-center justify-center gap-4 text-center">
+            <Shield className="h-5 w-5 text-primary shrink-0" />
+            <p className="text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Research-grade prediction</span> — This tool provides statistical estimates, not official DVSA advice
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Model Inputs */}
       <section className="section-padding">
-        <div className="container-narrow">
-          <div className="mb-10">
-            <h2 className="mb-3">Model Inputs</h2>
+        <div className="container-main">
+          <div className="mb-12">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Input Parameters
+            </p>
+            <h2 className="mb-4 text-2xl sm:text-3xl">Model Inputs</h2>
             <p className="prose-body max-w-xl">
               The prediction model uses the following vehicle characteristics.
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-6">
             {inputs.map((input, index) => (
               <div 
                 key={input.label}
-                className="flex gap-4 p-5 card-elevated animate-fade-in-up"
+                className="flex gap-4 p-6 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-10 w-10 rounded-md bg-secondary flex items-center justify-center shrink-0">
-                  <input.icon className="h-5 w-5 text-foreground" />
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <input.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">{input.label}</h3>
+                  <h3 className="font-semibold mb-2">{input.label}</h3>
                   <p className="text-sm prose-body">{input.description}</p>
                 </div>
               </div>
@@ -72,16 +159,49 @@ export default function MOTPredictor() {
         </div>
       </section>
 
+      {/* How the Model Works */}
+      <section className="section-padding bg-secondary/30 border-y border-border">
+        <div className="container-main">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Methodology
+            </p>
+            <h2 className="mb-6 text-2xl sm:text-3xl">How the Model Works</h2>
+            <div className="space-y-6 prose-body">
+              <p>
+                The MOT Failure Risk Predictor uses machine learning models trained on historical 
+                UK MOT test data. The model identifies statistical patterns that correlate with 
+                test outcomes.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-card border border-border">
+                  <h4 className="font-medium text-foreground mb-2 text-sm">Training Data</h4>
+                  <p className="text-sm">Historical MOT test results with vehicle characteristics</p>
+                </div>
+                <div className="p-4 rounded-xl bg-card border border-border">
+                  <h4 className="font-medium text-foreground mb-2 text-sm">Output</h4>
+                  <p className="text-sm">Probability estimate of MOT failure risk</p>
+                </div>
+              </div>
+              <p>
+                Results are presented as risk bands (Low, Medium, High) with explanatory notes. 
+                PDF reports can be generated for record-keeping purposes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Disclaimer */}
-      <section className="section-padding bg-secondary/40 border-y border-border">
-        <div className="container-narrow">
-          <div className="flex gap-5 items-start p-6 card-elevated border-amber-200 bg-amber-50/50">
-            <div className="h-10 w-10 rounded-md bg-amber-100 flex items-center justify-center shrink-0">
-              <AlertTriangle className="h-5 w-5 text-amber-700" />
+      <section className="section-padding">
+        <div className="container-main">
+          <div className="flex gap-5 items-start p-6 lg:p-8 card-elevated border-amber-200 bg-amber-50/50 max-w-3xl">
+            <div className="h-12 w-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+              <AlertTriangle className="h-6 w-6 text-amber-700" />
             </div>
             <div>
-              <h3 className="font-semibold mb-3 text-foreground">Important Information</h3>
-              <ul className="space-y-2 text-sm prose-body">
+              <h3 className="font-semibold mb-4 text-foreground text-lg">Important Information</h3>
+              <ul className="space-y-3 text-sm prose-body">
                 <li className="flex gap-3">
                   <span className="text-amber-700 font-medium">•</span>
                   This is an experimental AI model and results should be interpreted accordingly

@@ -28,14 +28,14 @@ export default function About() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding border-b border-border">
-        <div className="container-narrow">
+      <section className="section-padding border-b border-border hero-gradient">
+        <div className="container-main">
           <div className="max-w-2xl animate-fade-in-up">
-            <h1 className="mb-6">
+            <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl">
               About Autodun
             </h1>
             
-            <div className="space-y-4 text-lg prose-body max-w-xl">
+            <div className="space-y-5 text-lg prose-body max-w-xl">
               <p>
                 Autodun is an independent AI/ML research project focused on vehicle data analysis 
                 and predictive modelling. Our work centres on developing practical tools for 
@@ -53,25 +53,28 @@ export default function About() {
 
       {/* Research Goals */}
       <section className="section-padding">
-        <div className="container-narrow">
-          <div className="mb-10">
-            <h2 className="mb-3">Research Goals</h2>
+        <div className="container-main">
+          <div className="mb-12">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Mission
+            </p>
+            <h2 className="mb-4 text-2xl sm:text-3xl">Research Goals</h2>
             <p className="prose-body max-w-xl">
               Core objectives guiding our research and development work.
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-6">
             {goals.map((goal, index) => (
               <div 
                 key={goal.title}
                 className="p-6 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-10 w-10 rounded-md bg-secondary flex items-center justify-center mb-4">
-                  <goal.icon className="h-5 w-5 text-foreground" />
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                  <goal.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-medium mb-2">{goal.title}</h3>
+                <h3 className="font-semibold mb-3">{goal.title}</h3>
                 <p className="text-sm prose-body">
                   {goal.description}
                 </p>
@@ -82,11 +85,14 @@ export default function About() {
       </section>
 
       {/* Technical Approach */}
-      <section className="section-padding bg-secondary/40 border-y border-border">
-        <div className="container-narrow">
+      <section className="section-padding bg-secondary/30 border-y border-border">
+        <div className="container-main">
           <div className="max-w-2xl">
-            <h2 className="mb-4">Technical Approach</h2>
-            <div className="space-y-4 prose-body">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Methodology
+            </p>
+            <h2 className="mb-6 text-2xl sm:text-3xl">Technical Approach</h2>
+            <div className="space-y-5 prose-body">
               <p>
                 Our models are built using established machine learning techniques, trained on 
                 UK-style vehicle and MOT data. We prioritise model interpretability and provide 

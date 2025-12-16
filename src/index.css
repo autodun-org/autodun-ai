@@ -139,7 +139,7 @@
     max-width: 900px;
   }
   
-  /* Professional spacing system: 96px desktop, 64px mobile */
+  /* Professional spacing system: 80-96px desktop, 56-64px mobile */
   .section-sm {
     @apply py-8 md:py-12;
   }
@@ -149,11 +149,16 @@
   }
   
   .section-lg {
-    @apply py-16 md:py-24;
+    @apply py-14 md:py-20;
   }
   
   .section-xl {
     @apply py-16 md:py-24 lg:py-[96px];
+  }
+  
+  /* Standard page section padding */
+  .section-padding {
+    @apply py-14 md:py-20 lg:py-24;
   }
   
   .prose-body {
