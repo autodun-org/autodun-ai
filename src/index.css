@@ -139,26 +139,40 @@
     max-width: 900px;
   }
   
-  /* Professional spacing system: 80-96px desktop, 56-64px mobile */
-  .section-sm {
-    @apply py-8 md:py-12;
+  /* Hierarchical spacing system */
+  
+  /* Hero sections: generous bottom padding (140px desktop, 96px mobile) */
+  .section-hero {
+    @apply pt-16 pb-24 md:pt-20 md:pb-[140px];
   }
   
-  .section-md {
-    @apply py-12 md:py-16;
+  /* Major sections: 110px padding desktop, 72px mobile */
+  .section-major {
+    @apply py-[72px] md:py-[110px];
   }
   
-  .section-lg {
-    @apply py-14 md:py-20;
-  }
-  
-  .section-xl {
-    @apply py-16 md:py-24 lg:py-[96px];
-  }
-  
-  /* Standard page section padding: 96px desktop, 64px mobile */
+  /* Standard sections: 96px desktop, 64px mobile */
   .section-padding {
     @apply py-16 md:py-24;
+  }
+  
+  /* Compact sections: for banners/callouts */
+  .section-compact {
+    @apply py-6 md:py-8;
+  }
+  
+  /* Section header spacing: 36px to content */
+  .section-header {
+    @apply mb-9;
+  }
+  
+  /* Grouped elements spacing: 24-32px */
+  .group-spacing {
+    @apply gap-6 md:gap-8;
+  }
+  
+  .group-spacing-tight {
+    @apply gap-4 md:gap-6;
   }
   
   .prose-body {

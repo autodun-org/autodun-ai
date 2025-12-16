@@ -21,19 +21,19 @@ export default function MOTPredictor() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding border-b border-border hero-gradient">
+      <section className="section-hero border-b border-border hero-gradient">
         <div className="container-main">
           <div className="max-w-2xl">
             <div className="animate-fade-in-up">
-              <span className="badge-beta mb-6">
+              <span className="badge-beta mb-5">
                 Beta
               </span>
               
-              <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl">
+              <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
                 MOT Failure Risk Predictor
               </h1>
               
-              <p className="text-lg prose-body mb-10 max-w-xl">
+              <p className="text-lg prose-body mb-8 max-w-xl">
                 This tool estimates MOT failure risk using AI models trained on UK-style MOT data. 
                 Input your vehicle details to receive a risk assessment based on statistical patterns 
                 observed in historical test results.
@@ -51,13 +51,13 @@ export default function MOTPredictor() {
       </section>
 
       {/* Animated Explainer Video Section */}
-      <section className="section-padding">
+      <section className="section-major">
         <div className="container-main">
-          <div className="text-center mb-12">
+          <div className="text-center section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Platform Demo
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">
+            <h2 className="mb-3 text-2xl sm:text-3xl">
               How MOT Failure Risk Is Predicted
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -66,21 +66,21 @@ export default function MOTPredictor() {
           </div>
           
           {/* Animated Demo */}
-          <div className="max-w-4xl mx-auto mb-12 aspect-[16/10]">
+          <div className="max-w-4xl mx-auto mb-8 aspect-[16/10]">
             <MOTDemo />
           </div>
 
           {/* Step-by-step flow */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {videoSteps.map((step, index) => (
               <div 
                 key={step.label}
-                className="text-center p-5 rounded-xl bg-secondary/30 border border-border/50"
+                className="text-center p-4 rounded-xl bg-secondary/30 border border-border/50"
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="h-6 w-6 text-primary" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <step.icon className="h-5 w-5 text-primary" />
                 </div>
-                <div className="step-number mx-auto mb-3 text-xs">{index + 1}</div>
+                <div className="step-number mx-auto mb-2 text-xs">{index + 1}</div>
                 <p className="text-sm font-medium text-foreground mb-1">{step.label}</p>
                 <p className="text-xs text-muted-foreground">{step.description}</p>
               </div>
@@ -90,7 +90,7 @@ export default function MOTPredictor() {
       </section>
 
       {/* Research-Grade Disclaimer Banner */}
-      <section className="py-8 bg-primary/5 border-y border-primary/10">
+      <section className="section-compact bg-primary/5 border-y border-primary/10">
         <div className="container-main">
           <div className="flex items-center justify-center gap-4 text-center">
             <Shield className="h-5 w-5 text-primary shrink-0" />
@@ -102,30 +102,30 @@ export default function MOTPredictor() {
       </section>
 
       {/* Model Inputs */}
-      <section className="section-padding">
+      <section className="section-major">
         <div className="container-main">
-          <div className="mb-12">
+          <div className="section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Input Parameters
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">Model Inputs</h2>
+            <h2 className="mb-3 text-2xl sm:text-3xl">Model Inputs</h2>
             <p className="prose-body max-w-xl">
               The prediction model uses the following vehicle characteristics.
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-5">
             {inputs.map((input, index) => (
               <div 
                 key={input.label}
-                className="flex gap-4 p-6 card-elevated animate-fade-in-up"
+                className="flex gap-4 p-5 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <input.icon className="h-6 w-6 text-primary" />
+                <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <input.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">{input.label}</h3>
+                  <h3 className="font-semibold mb-1">{input.label}</h3>
                   <p className="text-sm prose-body">{input.description}</p>
                 </div>
               </div>
@@ -135,14 +135,14 @@ export default function MOTPredictor() {
       </section>
 
       {/* How the Model Works */}
-      <section className="section-padding bg-secondary/30 border-y border-border">
+      <section className="section-major bg-secondary/30 border-y border-border">
         <div className="container-main">
           <div className="max-w-2xl">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Methodology
             </p>
-            <h2 className="mb-6 text-2xl sm:text-3xl">How the Model Works</h2>
-            <div className="space-y-6 prose-body">
+            <h2 className="mb-5 text-2xl sm:text-3xl">How the Model Works</h2>
+            <div className="space-y-5 prose-body">
               <p>
                 The MOT Failure Risk Predictor uses machine learning models trained on historical 
                 UK MOT test data. The model identifies statistical patterns that correlate with 
@@ -170,26 +170,26 @@ export default function MOTPredictor() {
       {/* Disclaimer */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex gap-5 items-start p-6 lg:p-8 card-elevated border-amber-200 bg-amber-50/50 max-w-3xl">
-            <div className="h-12 w-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
-              <AlertTriangle className="h-6 w-6 text-amber-700" />
+          <div className="flex gap-4 items-start p-5 lg:p-6 card-elevated border-amber-200 bg-amber-50/50 max-w-3xl">
+            <div className="h-10 w-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+              <AlertTriangle className="h-5 w-5 text-amber-700" />
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-foreground text-lg">Important Information</h3>
-              <ul className="space-y-3 text-sm prose-body">
-                <li className="flex gap-3">
+              <h3 className="font-semibold mb-3 text-foreground">Important Information</h3>
+              <ul className="space-y-2 text-sm prose-body">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   This is an experimental AI model and results should be interpreted accordingly
                 </li>
-                <li className="flex gap-3">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   Predictions are not an official MOT result or guarantee of test outcome
                 </li>
-                <li className="flex gap-3">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   The model provides statistical risk estimates based on historical patterns
                 </li>
-                <li className="flex gap-3">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   Always rely on official DVSA MOT testing for vehicle roadworthiness certification
                 </li>

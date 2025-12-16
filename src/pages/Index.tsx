@@ -31,26 +31,26 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section - Two Column */}
-      <section className="hero-gradient border-b border-border">
-        <div className="container-main section-xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[70vh] lg:min-h-[75vh]">
+      <section className="hero-gradient border-b border-border section-hero">
+        <div className="container-main">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center min-h-[70vh] lg:min-h-[75vh]">
             {/* Left content */}
             <div className="text-center lg:text-left">
-              <div className="flex items-center gap-3 justify-center lg:justify-start mb-8">
+              <div className="flex items-center gap-3 justify-center lg:justify-start mb-6">
                 <LogoMark size="hero" />
               </div>
               
-              <h1 className="text-balance mb-6 text-3xl sm:text-4xl lg:text-5xl">
+              <h1 className="text-balance mb-5 text-3xl sm:text-4xl lg:text-5xl">
                 AI-driven vehicle insights for EV charging and MOT risk
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Independent research platform delivering analytics tools for UK vehicle data, 
                 EV infrastructure coverage, and MOT failure prediction.
               </p>
               
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6">
                 <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
                   <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                     Open EV Charger Finder
@@ -87,9 +87,9 @@ export default function Index() {
       </section>
 
       {/* Core Tools Section */}
-      <section className="section-xl">
+      <section className="section-major">
         <div className="container-main">
-          <div className="text-center mb-16">
+          <div className="text-center section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Core Tools
             </p>
@@ -101,13 +101,13 @@ export default function Index() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {tools.map((tool) => (
               <div 
                 key={tool.title}
                 className="card-elevated flex flex-col"
               >
-                <div className="flex items-start justify-between mb-5">
+                <div className="flex items-start justify-between mb-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <tool.icon className="h-6 w-6 text-primary" />
                   </div>
@@ -116,8 +116,8 @@ export default function Index() {
                     {tool.badge}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold mb-3">{tool.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
+                <h3 className="text-lg font-semibold mb-2">{tool.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-grow">
                   {tool.description}
                 </p>
                 <Button asChild className="gap-2 w-full">
@@ -133,9 +133,9 @@ export default function Index() {
       </section>
 
       {/* How It Works Section */}
-      <section className="section-xl bg-secondary/30 border-y border-border">
+      <section className="section-major bg-secondary/30 border-y border-border">
         <div className="container-main">
-          <div className="text-center mb-16">
+          <div className="text-center section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               How It Works
             </p>
@@ -147,24 +147,24 @@ export default function Index() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             <div className="text-center">
-              <div className="step-number mx-auto mb-6">1</div>
-              <h3 className="text-lg font-semibold mb-3">Enter your inputs</h3>
+              <div className="step-number mx-auto mb-5">1</div>
+              <h3 className="text-lg font-semibold mb-2">Enter your inputs</h3>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
                 Provide location for EV charging or vehicle details for MOT risk analysis.
               </p>
             </div>
             <div className="text-center">
-              <div className="step-number mx-auto mb-6">2</div>
-              <h3 className="text-lg font-semibold mb-3">Get AI insights</h3>
+              <div className="step-number mx-auto mb-5">2</div>
+              <h3 className="text-lg font-semibold mb-2">Get AI insights</h3>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
                 Our models process the data and generate coverage maps or risk estimates.
               </p>
             </div>
             <div className="text-center">
-              <div className="step-number mx-auto mb-6">3</div>
-              <h3 className="text-lg font-semibold mb-3">Take action</h3>
+              <div className="step-number mx-auto mb-5">3</div>
+              <h3 className="text-lg font-semibold mb-2">Take action</h3>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
                 Find nearby chargers or prepare for your MOT with informed guidance.
               </p>
@@ -174,13 +174,13 @@ export default function Index() {
       </section>
 
       {/* Final CTA */}
-      <section className="section-xl">
+      <section className="section-major">
         <div className="container-main text-center">
           <h2 className="mb-4 text-2xl sm:text-3xl">Ready to explore?</h2>
-          <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Access our research tools for EV infrastructure insights and MOT risk analysis.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="gap-2 w-full sm:w-auto">
               <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                 EV Charger Finder

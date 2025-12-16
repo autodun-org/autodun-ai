@@ -29,10 +29,10 @@ export default function DataUsage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding border-b border-border hero-gradient">
+      <section className="section-hero border-b border-border hero-gradient">
         <div className="container-main">
           <div className="max-w-2xl animate-fade-in-up">
-            <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl">
+            <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
               Data Usage & Responsibility
             </h1>
             
@@ -46,30 +46,30 @@ export default function DataUsage() {
       </section>
 
       {/* Principles */}
-      <section className="section-padding">
+      <section className="section-major">
         <div className="container-main">
-          <div className="mb-12">
+          <div className="section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Data Governance
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">Our Data Principles</h2>
+            <h2 className="mb-3 text-2xl sm:text-3xl">Our Data Principles</h2>
             <p className="prose-body max-w-xl">
               Core commitments governing how we handle and process data.
             </p>
           </div>
           
-          <div className="space-y-5 max-w-3xl">
+          <div className="space-y-4 max-w-3xl">
             {principles.map((principle, index) => (
               <div 
                 key={principle.title}
-                className="flex gap-5 p-6 card-elevated animate-fade-in-up"
+                className="flex gap-4 p-5 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <principle.icon className="h-6 w-6 text-primary" />
+                <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <principle.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">{principle.title}</h3>
+                  <h3 className="font-semibold mb-1">{principle.title}</h3>
                   <p className="text-sm prose-body">
                     {principle.description}
                   </p>
@@ -81,14 +81,14 @@ export default function DataUsage() {
       </section>
 
       {/* Summary */}
-      <section className="section-padding bg-secondary/30 border-y border-border">
+      <section className="section-major bg-secondary/30 border-y border-border">
         <div className="container-main">
           <div className="max-w-2xl">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Overview
             </p>
-            <h2 className="mb-6 text-2xl sm:text-3xl">Summary</h2>
-            <div className="space-y-5 prose-body">
+            <h2 className="mb-5 text-2xl sm:text-3xl">Summary</h2>
+            <div className="space-y-4 prose-body">
               <p>
                 Autodun processes vehicle data for research and analytical purposes. We maintain 
                 strict data governance practices to ensure that vehicle information is handled 
@@ -111,11 +111,11 @@ export default function DataUsage() {
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Related Tools
             </p>
-            <h2 className="mb-6 text-2xl sm:text-3xl">Explore Our Analytics</h2>
-            <p className="prose-body mb-8">
+            <h2 className="mb-5 text-2xl sm:text-3xl">Explore Our Analytics</h2>
+            <p className="prose-body mb-6">
               Our analytics tools are built with the same commitment to responsible data use.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild className="gap-2">
                 <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                   EV Charger Finder

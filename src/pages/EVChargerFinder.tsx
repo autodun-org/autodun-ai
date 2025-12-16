@@ -46,27 +46,27 @@ export default function EVChargerFinder() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding border-b border-border hero-gradient">
+      <section className="section-hero border-b border-border hero-gradient">
         <div className="container-main">
           <div className="max-w-2xl">
             <div className="animate-fade-in-up">
-              <span className="badge-active mb-6">
+              <span className="badge-active mb-5">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 Active Tool
               </span>
               
-              <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl">
+              <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
                 EV Charger Finder & Infrastructure Analytics
               </h1>
               
-              <p className="text-lg prose-body mb-10 max-w-xl">
+              <p className="text-lg prose-body mb-8 max-w-xl">
                 Explore EV charging locations and infrastructure coverage using public datasets 
                 and analytics. This tool supports research into charger availability, infrastructure 
                 planning, and EV adoption trends.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+            <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
                 <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                   Open EV Charger Finder
@@ -85,13 +85,13 @@ export default function EVChargerFinder() {
       </section>
 
       {/* Animated Explainer Video Section */}
-      <section className="section-padding">
+      <section className="section-major">
         <div className="container-main">
-          <div className="text-center mb-12">
+          <div className="text-center section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Platform Demo
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">
+            <h2 className="mb-3 text-2xl sm:text-3xl">
               How the EV Charger Finder Works
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -100,19 +100,19 @@ export default function EVChargerFinder() {
           </div>
           
           {/* Animated Demo */}
-          <div className="max-w-4xl mx-auto mb-12 aspect-[16/10]">
+          <div className="max-w-4xl mx-auto mb-8 aspect-[16/10]">
             <EVChargerDemo />
           </div>
 
           {/* Step-by-step flow */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {videoSteps.map((step, index) => (
               <div 
                 key={step.label}
-                className="text-center p-4 rounded-xl bg-secondary/30 border border-border/50"
+                className="text-center p-3 rounded-xl bg-secondary/30 border border-border/50"
               >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <step.icon className="h-5 w-5 text-primary" />
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                  <step.icon className="h-4 w-4 text-primary" />
                 </div>
                 <p className="text-xs font-medium text-foreground mb-1">{step.label}</p>
                 <p className="text-xs text-muted-foreground">{step.description}</p>
@@ -123,13 +123,13 @@ export default function EVChargerFinder() {
       </section>
 
       {/* AI-Powered Station Scoring */}
-      <section className="section-padding bg-secondary/30 border-y border-border">
+      <section className="section-major bg-secondary/30 border-y border-border">
         <div className="container-main">
-          <div className="text-center mb-14">
+          <div className="text-center section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               AI Features
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">
+            <h2 className="mb-3 text-2xl sm:text-3xl">
               AI-Powered Station Scoring
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -137,16 +137,16 @@ export default function EVChargerFinder() {
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {aiScoringSteps.map((step, index) => (
               <div 
                 key={step.title}
                 className="text-center"
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20">
-                  <step.icon className="h-7 w-7 text-primary" />
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 border border-primary/20">
+                  <step.icon className="h-6 w-6 text-primary" />
                 </div>
-                <div className="step-number mx-auto mb-4 text-xs">{index + 1}</div>
+                <div className="step-number mx-auto mb-3 text-xs">{index + 1}</div>
                 <h3 className="text-base font-semibold mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
                   {step.description}
@@ -155,7 +155,7 @@ export default function EVChargerFinder() {
             ))}
           </div>
 
-          <div className="mt-14 text-center">
+          <div className="mt-10 text-center">
             <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-card border border-border">
               <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded-full bg-green-500" />
@@ -177,30 +177,30 @@ export default function EVChargerFinder() {
       </section>
 
       {/* Capabilities */}
-      <section className="section-padding">
+      <section className="section-major">
         <div className="container-main">
-          <div className="mb-12">
+          <div className="section-header">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Features
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">Tool Capabilities</h2>
+            <h2 className="mb-3 text-2xl sm:text-3xl">Tool Capabilities</h2>
             <p className="prose-body max-w-xl">
               Core features for EV infrastructure research and analysis.
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-5">
             {capabilities.map((item, index) => (
               <div 
                 key={item.label}
-                className="flex gap-4 p-6 card-elevated animate-fade-in-up"
+                className="flex gap-4 p-5 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <item.icon className="h-6 w-6 text-primary" />
+                <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <item.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">{item.label}</h3>
+                  <h3 className="font-semibold mb-1">{item.label}</h3>
                   <p className="text-sm prose-body">{item.description}</p>
                 </div>
               </div>
@@ -210,38 +210,38 @@ export default function EVChargerFinder() {
       </section>
 
       {/* Use Cases */}
-      <section className="section-padding bg-secondary/30 border-y border-border">
+      <section className="section-major bg-secondary/30 border-y border-border">
         <div className="container-main">
           <div className="max-w-2xl">
             <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               Applications
             </p>
-            <h2 className="mb-6 text-2xl sm:text-3xl">Research & Decision-Support Use</h2>
-            <p className="prose-body mb-8">
+            <h2 className="mb-5 text-2xl sm:text-3xl">Research & Decision-Support Use</h2>
+            <p className="prose-body mb-6">
               The EV Charger Finder is designed for researchers, analysts, and planners who require 
               data-driven insights into EV charging infrastructure. Applications include:
             </p>
-            <ul className="space-y-4 text-sm prose-body">
-              <li className="flex gap-4 items-start">
-                <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+            <ul className="space-y-3 text-sm prose-body">
+              <li className="flex gap-3 items-start">
+                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 </span>
                 Infrastructure coverage analysis and gap identification
               </li>
-              <li className="flex gap-4 items-start">
-                <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex gap-3 items-start">
+                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 </span>
                 Public charging network distribution research
               </li>
-              <li className="flex gap-4 items-start">
-                <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex gap-3 items-start">
+                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 </span>
                 EV adoption trend analysis and forecasting support
               </li>
-              <li className="flex gap-4 items-start">
-                <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex gap-3 items-start">
+                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 </span>
                 Regional infrastructure planning and assessment
@@ -254,26 +254,26 @@ export default function EVChargerFinder() {
       {/* Disclaimer */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex gap-5 items-start p-6 lg:p-8 card-elevated border-amber-200 bg-amber-50/50 max-w-3xl">
-            <div className="h-12 w-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
-              <AlertTriangle className="h-6 w-6 text-amber-700" />
+          <div className="flex gap-4 items-start p-5 lg:p-6 card-elevated border-amber-200 bg-amber-50/50 max-w-3xl">
+            <div className="h-10 w-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+              <AlertTriangle className="h-5 w-5 text-amber-700" />
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-foreground text-lg">Important Information</h3>
-              <ul className="space-y-3 text-sm prose-body">
-                <li className="flex gap-3">
+              <h3 className="font-semibold mb-3 text-foreground">Important Information</h3>
+              <ul className="space-y-2 text-sm prose-body">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   This is a research and decision-support tool, not an official government service
                 </li>
-                <li className="flex gap-3">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   Data is sourced from public datasets and may not reflect real-time availability
                 </li>
-                <li className="flex gap-3">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   Always verify charging point status before travel planning
                 </li>
-                <li className="flex gap-3">
+                <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   Autodun is not affiliated with any charging network operator
                 </li>
