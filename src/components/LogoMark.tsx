@@ -16,13 +16,13 @@ export function LogoMark({ className, size = "md", variant = "dark", animated = 
   };
 
   const isDark = variant === "dark";
-  const textColor = isDark ? "hsl(222, 47%, 11%)" : "hsl(210, 40%, 98%)";
-  const lineColor = "hsl(199, 60%, 65%)"; // Soft cyan
-  const nodeColor = "hsl(199, 70%, 55%)"; // Brighter cyan for node
+  const textColor = isDark ? "hsl(220, 30%, 18%)" : "hsl(210, 40%, 98%)";
+  const lineColor = "hsl(200, 50%, 60%)";
+  const nodeColor = "hsl(200, 60%, 50%)";
 
   return (
     <svg
-      viewBox="0 0 320 60"
+      viewBox="0 0 340 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(sizes[size], "w-auto", className)}
@@ -33,8 +33,8 @@ export function LogoMark({ className, size = "md", variant = "dark", animated = 
           <style>
             {`
               @keyframes nodePulse {
-                0%, 100% { opacity: 1; r: 3; }
-                50% { opacity: 0.6; r: 4; }
+                0%, 100% { opacity: 0.9; }
+                50% { opacity: 0.5; }
               }
               .node-animate { animation: nodePulse 2.5s ease-in-out infinite; }
             `}
@@ -44,45 +44,43 @@ export function LogoMark({ className, size = "md", variant = "dark", animated = 
 
       {/* Single flowing neural line through the text */}
       <path 
-        d="M8 32 Q60 28, 120 34 Q160 30, 180 32 Q220 28, 312 34" 
+        d="M12 38 Q80 34, 140 40 Q170 36, 200 38 Q260 42, 328 36" 
+        stroke={lineColor}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.6"
+      />
+      
+      {/* Node near the O with vertical connector */}
+      <circle 
+        cx="178" 
+        cy="37" 
+        r="3.5" 
+        fill={nodeColor} 
+        className={animated ? "node-animate" : ""} 
+        opacity="0.8" 
+      />
+      <path 
+        d="M178 37 L178 26" 
         stroke={lineColor}
         strokeWidth="1.2"
         strokeLinecap="round"
         fill="none"
-        opacity="0.7"
-      />
-      
-      {/* Single node near the O */}
-      <circle 
-        cx="180" 
-        cy="32" 
-        r="3" 
-        fill={nodeColor} 
-        className={animated ? "node-animate" : ""} 
-        opacity="0.9" 
-      />
-      
-      {/* Small connector line from node */}
-      <path 
-        d="M180 32 L180 24" 
-        stroke={lineColor}
-        strokeWidth="1"
-        strokeLinecap="round"
-        fill="none"
         opacity="0.5"
       />
-      <circle cx="180" cy="24" r="1.5" fill={nodeColor} opacity="0.6" />
+      <circle cx="178" cy="26" r="2" fill={nodeColor} opacity="0.5" />
 
-      {/* AUTODUN text - bold, modern */}
+      {/* AUTODUN text */}
       <text
-        x="160"
-        y="40"
+        x="170"
+        y="48"
         textAnchor="middle"
         fill={textColor}
-        fontSize="36"
+        fontSize="38"
         fontWeight="700"
         fontFamily="system-ui, -apple-system, sans-serif"
-        letterSpacing="6"
+        letterSpacing="8"
       >
         AUTODUN
       </text>
