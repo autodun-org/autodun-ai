@@ -29,11 +29,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container-main">
-        <nav className="flex h-16 items-center justify-between">
+        <nav className="flex h-20 items-center justify-between">
           {/* Logo ONLY */}
           <Link to="/" className="flex items-center">
-            {/* Force a bigger logo size here */}
-            <LogoMark className="h-9 w-auto" />
+            {/* Big header logo */}
+            <LogoMark
+              size="header"
+              className="h-12 w-[180px] max-w-none object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
