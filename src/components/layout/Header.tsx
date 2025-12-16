@@ -31,15 +31,9 @@ export function Header() {
       <div className="container-main">
         <nav className="flex h-16 items-center justify-between">
           {/* Logo ONLY */}
-          <Link
-            to="/"
-            aria-label="Autodun Home"
-            className="flex items-center shrink-0"
-          >
-            {/* Force consistent logo size + perfect vertical centering */}
-            <div className="h-8 w-8 flex items-center justify-center">
-              <LogoMark size="header" />
-            </div>
+          <Link to="/" className="flex items-center">
+            {/* Force a bigger logo size here */}
+            <LogoMark className="h-9 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -93,11 +87,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Toggle menu</span>
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </nav>
 
