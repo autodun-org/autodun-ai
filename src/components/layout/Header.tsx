@@ -1,8 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { LogoMark } from "@/components/LogoMark";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ExternalLink } from "lucide-react";
+import { LogoMark } from "@/components/LogoMark";
 import { Button } from "@/components/ui/button";
 
 const navigation = [
@@ -17,70 +16,93 @@ export function Header() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const isActive = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname.startsWith(href);
+  };
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="container-narrow py-2">
-        <div className="flex items-center justify-between">
-          {/* Logo Badge */}
-          <Link to="/" className="shrink-0 flex items-center">
-            <LogoMark size="md" />
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
+      <div className="container-main">
+        <nav className="flex h-16 items-center justify-between">
+          {/* Logo + Wordmark */}
+          <Link to="/" className="flex items-center gap-2.5">
+            <LogoMark size="header" />
+            <span className="font-semibold text-lg text-foreground tracking-tight">
+              AUTODUN
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={cn(
-                  "px-3 py-1.5 text-sm font-medium rounded transition-colors",
-                  location.pathname === item.href
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive(item.href)
                     ? "text-foreground bg-secondary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
-                )}
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                }`}
               >
                 {item.name}
               </Link>
             ))}
-          </nav>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden p-2"
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Button asChild size="sm" className="gap-2">
+              <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
+                Launch Tools
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="lg:hidden p-2 -mr-2 text-muted-foreground hover:text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
+            <span className="sr-only">Toggle menu</span>
             {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-6 w-6" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-6 w-6" />
             )}
-          </Button>
-        </div>
+          </button>
+        </nav>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
+          <div className="lg:hidden border-t border-border py-4 animate-fade-in">
             <div className="flex flex-col gap-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "px-3 py-2.5 text-sm font-medium rounded transition-colors",
-                    location.pathname === item.href
+                  className={`px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
+                    isActive(item.href)
                       ? "text-foreground bg-secondary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
-                  )}
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                  }`}
                 >
                   {item.name}
                 </Link>
               ))}
+              <div className="pt-3 mt-2 border-t border-border">
+                <Button asChild className="w-full gap-2">
+                  <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
+                    Launch Tools
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
             </div>
-          </nav>
+          </div>
         )}
       </div>
     </header>
