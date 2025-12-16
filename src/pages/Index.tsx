@@ -33,9 +33,18 @@ export default function Index() {
       {/* Hero Section */}
       <section className="py-10 md:py-14 border-b border-border">
         <div className="container-narrow">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            {/* Logo */}
-            <LogoMark size="xl" className="mb-3" />
+          <div className="flex flex-col items-center text-center">
+            {/* Hero Logo */}
+            <span 
+              className="block font-bold tracking-tight text-foreground mb-3"
+              style={{ 
+                fontSize: 'clamp(48px, 6vw, 88px)', 
+                lineHeight: 1.1,
+                fontFamily: 'inherit'
+              }}
+            >
+              AUTODUN
+            </span>
             
             {/* Subtitle */}
             <p className="text-xs font-medium text-primary tracking-wide uppercase mb-4">
