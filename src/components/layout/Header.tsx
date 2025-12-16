@@ -8,7 +8,11 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "EV Charger Finder", href: "/ev-charger-finder" },
   { name: "MOT Predictor", href: "/mot-predictor" },
-  { name: "Council Dashboard", href: "https://ev.autodun.com/ev-charging-council-dashboard", external: true },
+  {
+    name: "Council Dashboard",
+    href: "https://ev.autodun.com/ev-charging-council-dashboard",
+    external: true,
+  },
   { name: "Data Usage", href: "/data-usage" },
   { name: "About", href: "/about" },
 ];
@@ -26,17 +30,21 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container-main">
         <nav className="flex h-16 items-center justify-between">
-          {/* Logo + Wordmark */}
-          <Link to="/" className="flex items-center gap-2.5">
-            <LogoMark size="header" />
-            <span className="font-semibold text-lg text-foreground tracking-tight">
-              AUTODUN
-            </span>
+          {/* Logo ONLY */}
+          <Link
+            to="/"
+            aria-label="Autodun Home"
+            className="flex items-center shrink-0"
+          >
+            {/* Force consistent logo size + perfect vertical centering */}
+            <div className="h-8 w-8 flex items-center justify-center">
+              <LogoMark size="header" />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navigation.map((item) => (
+            {navigation.map((item) =>
               item.external ? (
                 <a
                   key={item.name}
@@ -61,13 +69,17 @@ export function Header() {
                   {item.name}
                 </Link>
               )
-            ))}
+            )}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Button asChild size="sm" className="gap-2">
-              <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://ev.autodun.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Launch Tools
                 <ExternalLink className="h-3.5 w-3.5" />
               </a>
@@ -93,7 +105,7 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-border py-4 animate-fade-in">
             <div className="flex flex-col gap-1">
-              {navigation.map((item) => (
+              {navigation.map((item) =>
                 item.external ? (
                   <a
                     key={item.name}
@@ -120,10 +132,15 @@ export function Header() {
                     {item.name}
                   </Link>
                 )
-              ))}
+              )}
+
               <div className="pt-3 mt-2 border-t border-border">
                 <Button asChild className="w-full gap-2">
-                  <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://ev.autodun.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Launch Tools
                     <ExternalLink className="h-4 w-4" />
                   </a>
