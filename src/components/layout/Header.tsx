@@ -1,6 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/Logo";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -12,17 +15,20 @@ const navigation = [
 
 export function Header() {
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-narrow">
         <div className="flex h-14 items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <Logo size="md" className="text-foreground transition-colors group-hover:text-primary" />
+          {/* Logo + Brand */}
+          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+            <Logo size="md" className="text-foreground" />
             <span className="font-semibold text-base tracking-tight">Autodun</span>
           </Link>
 
-          <nav className="flex items-center gap-0.5">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-0.5">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -38,7 +44,45 @@ export function Header() {
               </Link>
             ))}
           </nav>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="md:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
         </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden py-4 border-t border-border">
+            <div className="flex flex-col gap-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "px-3 py-2.5 text-sm font-medium rounded transition-colors",
+                    location.pathname === item.href
+                      ? "text-foreground bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   );
