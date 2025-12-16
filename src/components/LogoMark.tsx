@@ -9,7 +9,7 @@ interface LogoMarkProps {
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
   const sizes: Record<string, string> = {
     sm: "h-6",
-    header: "h-[30px]",
+    header: "h-12",     // ✅ make default header bigger
     md: "h-8",
     lg: "h-10",
     xl: "h-12",
@@ -18,14 +18,22 @@ export function LogoMark({ className, size = "md" }: LogoMarkProps) {
 
   if (size === "hero") {
     return (
-      <img 
-        src={autodunLogo} 
-        alt="AUTODUN" 
-        className={cn("w-auto block", className)}
-        style={{ height: 'clamp(48px, 6vw, 72px)' }}
+      <img
+        src={autodunLogo}
+        alt="AUTODUN"
+        className={cn("w-auto block object-contain max-w-none", className)}
+        style={{ height: "clamp(48px, 6vw, 72px)" }}
       />
     );
   }
 
-  return <img src={autodunLogo} alt="AUTODUN" className={cn(sizes[size], "w-auto", className)} />;
+  // ✅ IMPORTANT: allow className to override size reliably
+  // Put size first, className last.
+  return (
+    <img
+      src={autodunLogo}
+      alt="AUTODUN"
+      className={cn("w-auto block object-contain max-w-none", sizes[size], className)}
+    />
+  );
 }
