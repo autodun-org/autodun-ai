@@ -20,38 +20,47 @@ export function Logo({ className, size = "md" }: LogoProps) {
       className={cn(sizes[size], className)}
       aria-label="Autodun logo"
     >
-      {/* Solid hexagonal intelligence core with internal processing layers */}
+      {/* AI-driven vehicle intelligence: forward trajectory with predictive branching */}
       
-      {/* Outer hexagon - system boundary */}
+      {/* Primary motion path - forward trajectory */}
       <path
-        d="M16 2L28 9V23L16 30L4 23V9L16 2Z"
-        fill="currentColor"
-        opacity="0.12"
+        d="M4 20C8 20 10 16 16 16C22 16 24 12 28 12"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        fill="none"
       />
       
-      {/* Middle layer - processing ring */}
+      {/* Upper prediction branch - alternative trajectory */}
       <path
-        d="M16 6L24 10.5V21.5L16 26L8 21.5V10.5L16 6Z"
-        fill="currentColor"
-        opacity="0.25"
+        d="M16 16C20 16 22 8 28 8"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.5"
       />
       
-      {/* Inner core - intelligence hub */}
+      {/* Lower prediction branch - alternative trajectory */}
       <path
-        d="M16 10L20 12.5V19.5L16 22L12 19.5V12.5L16 10Z"
-        fill="currentColor"
+        d="M16 16C20 16 22 20 28 20"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.5"
       />
       
-      {/* Central node - primary signal point */}
-      <circle cx="16" cy="16" r="2.5" fill="currentColor" />
+      {/* Origin point - current position/data source */}
+      <circle cx="4" cy="20" r="3" fill="currentColor" />
       
-      {/* Connection nodes - data I/O points */}
-      <circle cx="16" cy="6" r="1.5" fill="currentColor" />
-      <circle cx="24" cy="10.5" r="1.5" fill="currentColor" />
-      <circle cx="24" cy="21.5" r="1.5" fill="currentColor" />
-      <circle cx="16" cy="26" r="1.5" fill="currentColor" />
-      <circle cx="8" cy="21.5" r="1.5" fill="currentColor" />
-      <circle cx="8" cy="10.5" r="1.5" fill="currentColor" />
+      {/* Decision/inference node - AI prediction point */}
+      <circle cx="16" cy="16" r="3.5" fill="currentColor" />
+      
+      {/* Destination nodes - predicted outcomes */}
+      <circle cx="28" cy="8" r="2" fill="currentColor" opacity="0.5" />
+      <circle cx="28" cy="12" r="2.5" fill="currentColor" />
+      <circle cx="28" cy="20" r="2" fill="currentColor" opacity="0.5" />
     </svg>
   );
 }
