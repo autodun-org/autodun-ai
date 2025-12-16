@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { StylisedA } from "@/components/StylisedA";
+import { LogoMark } from "@/components/LogoMark";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -21,10 +21,12 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-narrow">
         <div className="flex h-14 items-center justify-between">
-          {/* Typographic Logo */}
-          <Link to="/" className="flex items-end shrink-0 group">
-            <StylisedA className="text-foreground" />
-            <span className="font-semibold text-lg tracking-tight text-foreground leading-none pb-[3px]">utodun</span>
+          {/* Logo + Wordmark */}
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <LogoMark size="md" className="text-foreground" />
+            <span className="font-bold text-base tracking-wide text-foreground uppercase">
+              Autodun
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
