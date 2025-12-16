@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Home", href: "/" },
+  { name: "EV Charger Finder", href: "/ev-charger-finder" },
   { name: "MOT Predictor", href: "/mot-predictor" },
   { name: "Data Usage", href: "/data-usage" },
   { name: "About", href: "/about" },
