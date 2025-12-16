@@ -20,42 +20,81 @@ export function Logo({ className, size = "md" }: LogoProps) {
       className={cn(sizes[size], className)}
       aria-label="Autodun logo"
     >
-      {/* Abstract "A" formed by connected nodes - represents AI/ML network intelligence */}
-      <defs>
-        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="1" />
-          <stop offset="100%" stopColor="currentColor" stopOpacity="0.7" />
-        </linearGradient>
-      </defs>
+      {/* Neural network / AI node structure forming abstract "A" */}
       
-      {/* Main triangular structure - stylised A */}
-      <path
-        d="M16 4L4 26h6l2-4h8l2 4h6L16 4z"
-        fill="none"
+      {/* Primary vertical axis - central intelligence line */}
+      <line
+        x1="16"
+        y1="4"
+        x2="16"
+        y2="28"
         stroke="currentColor"
         strokeWidth="1.5"
-        strokeLinejoin="round"
+        strokeLinecap="round"
       />
       
-      {/* Central horizontal connection - data flow */}
+      {/* Left branch - data pathway */}
       <line
-        x1="10"
+        x1="16"
+        y1="8"
+        x2="6"
+        y2="24"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      
+      {/* Right branch - data pathway */}
+      <line
+        x1="16"
+        y1="8"
+        x2="26"
+        y2="24"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      
+      {/* Cross connection - neural layer */}
+      <line
+        x1="9"
         y1="18"
-        x2="22"
+        x2="23"
         y2="18"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       
-      {/* Node points - representing data/intelligence nodes */}
-      <circle cx="16" cy="8" r="2" fill="currentColor" />
-      <circle cx="10" cy="18" r="1.5" fill="currentColor" />
-      <circle cx="22" cy="18" r="1.5" fill="currentColor" />
-      <circle cx="16" cy="18" r="1.5" fill="currentColor" />
+      {/* Secondary connections - network pathways */}
+      <line
+        x1="11"
+        y1="14"
+        x2="21"
+        y2="14"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        opacity="0.5"
+      />
       
-      {/* Apex node - primary intelligence point */}
-      <circle cx="16" cy="4" r="1" fill="currentColor" opacity="0.6" />
+      {/* Primary nodes - intelligence points */}
+      <circle cx="16" cy="4" r="2.5" fill="currentColor" />
+      <circle cx="16" cy="18" r="2" fill="currentColor" />
+      <circle cx="16" cy="28" r="2" fill="currentColor" />
+      
+      {/* Branch nodes */}
+      <circle cx="6" cy="24" r="1.5" fill="currentColor" />
+      <circle cx="26" cy="24" r="1.5" fill="currentColor" />
+      
+      {/* Mid-branch nodes - processing layer */}
+      <circle cx="9" cy="18" r="1.5" fill="currentColor" />
+      <circle cx="23" cy="18" r="1.5" fill="currentColor" />
+      
+      {/* Upper layer nodes */}
+      <circle cx="11" cy="14" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="21" cy="14" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="16" cy="8" r="1.5" fill="currentColor" />
     </svg>
   );
 }
@@ -69,26 +108,21 @@ export function LogoMark({ className }: { className?: string }) {
       className={cn("h-8 w-8", className)}
       aria-label="Autodun"
     >
-      <path
-        d="M16 4L4 26h6l2-4h8l2 4h6L16 4z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <line
-        x1="10"
-        y1="18"
-        x2="22"
-        y2="18"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <circle cx="16" cy="8" r="2" fill="currentColor" />
-      <circle cx="10" cy="18" r="1.5" fill="currentColor" />
-      <circle cx="22" cy="18" r="1.5" fill="currentColor" />
-      <circle cx="16" cy="18" r="1.5" fill="currentColor" />
+      <line x1="16" y1="4" x2="16" y2="28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="16" y1="8" x2="6" y2="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="16" y1="8" x2="26" y2="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="9" y1="18" x2="23" y2="18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="11" y1="14" x2="21" y2="14" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+      <circle cx="16" cy="4" r="2.5" fill="currentColor" />
+      <circle cx="16" cy="18" r="2" fill="currentColor" />
+      <circle cx="16" cy="28" r="2" fill="currentColor" />
+      <circle cx="6" cy="24" r="1.5" fill="currentColor" />
+      <circle cx="26" cy="24" r="1.5" fill="currentColor" />
+      <circle cx="9" cy="18" r="1.5" fill="currentColor" />
+      <circle cx="23" cy="18" r="1.5" fill="currentColor" />
+      <circle cx="11" cy="14" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="21" cy="14" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="16" cy="8" r="1.5" fill="currentColor" />
     </svg>
   );
 }
