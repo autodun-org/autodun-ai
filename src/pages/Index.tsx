@@ -52,13 +52,13 @@ export default function Index() {
               style={{ animationDelay: "100ms" }}
             >
               <Button asChild size="lg" className="gap-2 font-medium">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                   Open EV Charger Finder
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2 font-medium">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
                   Open MOT Predictor
                   <ArrowRight className="h-4 w-4" />
                 </a>
