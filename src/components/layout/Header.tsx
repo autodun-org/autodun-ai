@@ -21,11 +21,11 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-narrow">
         <div className="flex h-14 items-center justify-between">
-          {/* Logo + Wordmark */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <LogoMark size="md" className="text-foreground" />
-            <span className="font-bold text-base tracking-wide text-foreground uppercase">
-              Autodun
+          {/* Logo Wordmark */}
+          <Link to="/" className="shrink-0">
+            <span className="font-bold text-lg tracking-wide text-foreground uppercase inline-flex items-baseline">
+              <LogoMark size="md" className="text-foreground" />
+              <span className="ml-[0.05em]">utodun</span>
             </span>
           </Link>
 
