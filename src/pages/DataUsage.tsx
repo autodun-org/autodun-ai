@@ -28,10 +28,10 @@ export default function DataUsage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding border-b border-border">
-        <div className="container-narrow">
+      <section className="section-padding border-b border-border hero-gradient">
+        <div className="container-main">
           <div className="max-w-2xl animate-fade-in-up">
-            <h1 className="mb-6">
+            <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl">
               Data Usage & Responsibility
             </h1>
             
@@ -46,26 +46,29 @@ export default function DataUsage() {
 
       {/* Principles */}
       <section className="section-padding">
-        <div className="container-narrow">
-          <div className="mb-10">
-            <h2 className="mb-3">Our Data Principles</h2>
+        <div className="container-main">
+          <div className="mb-12">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Data Governance
+            </p>
+            <h2 className="mb-4 text-2xl sm:text-3xl">Our Data Principles</h2>
             <p className="prose-body max-w-xl">
               Core commitments governing how we handle and process data.
             </p>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-5 max-w-3xl">
             {principles.map((principle, index) => (
               <div 
                 key={principle.title}
                 className="flex gap-5 p-6 card-elevated animate-fade-in-up"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <div className="h-10 w-10 rounded-md bg-secondary flex items-center justify-center shrink-0">
-                  <principle.icon className="h-5 w-5 text-foreground" />
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <principle.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">{principle.title}</h3>
+                  <h3 className="font-semibold mb-2">{principle.title}</h3>
                   <p className="text-sm prose-body">
                     {principle.description}
                   </p>
@@ -77,11 +80,14 @@ export default function DataUsage() {
       </section>
 
       {/* Summary */}
-      <section className="section-padding bg-secondary/40 border-y border-border">
-        <div className="container-narrow">
+      <section className="section-padding bg-secondary/30 border-y border-border">
+        <div className="container-main">
           <div className="max-w-2xl">
-            <h2 className="mb-4">Summary</h2>
-            <div className="space-y-4 prose-body">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Overview
+            </p>
+            <h2 className="mb-6 text-2xl sm:text-3xl">Summary</h2>
+            <div className="space-y-5 prose-body">
               <p>
                 Autodun processes vehicle data for research and analytical purposes. We maintain 
                 strict data governance practices to ensure that vehicle information is handled 
