@@ -1,76 +1,63 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/LogoMark";
-import { ArrowRight, Zap, MapPin, BarChart3, Cpu, FileText, Shield, Search, Lightbulb, CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, Zap, MapPin, BarChart3, Play, Shield } from "lucide-react";
 
-const capabilities = [
+const tools = [
   {
-    icon: MapPin,
-    title: "EV Infrastructure Analytics",
-    description: "Explore UK charging locations, coverage gaps, and infrastructure planning insights using public datasets.",
+    icon: Zap,
+    title: "EV Charger Finder",
+    description: "Explore UK charging locations with coverage maps and infrastructure analytics.",
+    href: "https://ev.autodun.com",
+    badge: "Active",
   },
   {
     icon: BarChart3,
-    title: "MOT Risk Estimation",
-    description: "AI-driven analysis estimating MOT failure probability based on vehicle characteristics and historical data.",
+    title: "MOT Failure Risk Predictor",
+    description: "AI-driven risk estimation based on vehicle characteristics and MOT history.",
+    href: "https://mot.autodun.com",
+    badge: "Beta",
   },
   {
-    icon: Cpu,
-    title: "Vehicle Data Research",
-    description: "Tools for analysing vehicle populations, trends, and patterns across comprehensive UK datasets.",
-  },
-];
-
-const steps = [
-  {
-    number: "1",
-    title: "Enter your inputs",
-    description: "Provide location for EV charging or vehicle details for MOT risk analysis.",
-  },
-  {
-    number: "2",
-    title: "Get AI insights",
-    description: "Our models process the data and generate coverage maps or risk estimates.",
-  },
-  {
-    number: "3",
-    title: "Take action",
-    description: "Find nearby chargers or prepare for your MOT with informed guidance.",
+    icon: MapPin,
+    title: "Council EV Analytics Dashboard",
+    description: "Local authority insights for EV infrastructure planning and coverage analysis.",
+    href: "https://ev.autodun.com/ev-charging-council-dashboard",
+    badge: "New",
   },
 ];
 
 export default function Index() {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section - Two Column */}
       <section className="hero-gradient border-b border-border">
-        <div className="container-main section-lg">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container-main section-xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[70vh] lg:min-h-[75vh]">
             {/* Left content */}
             <div className="text-center lg:text-left">
-              <div className="flex items-center gap-3 justify-center lg:justify-start mb-6">
+              <div className="flex items-center gap-3 justify-center lg:justify-start mb-8">
                 <LogoMark size="hero" />
               </div>
               
-              <h1 className="text-balance mb-4">
+              <h1 className="text-balance mb-6 text-3xl sm:text-4xl lg:text-5xl">
                 AI-driven vehicle insights for EV charging and MOT risk
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Independent research platform delivering analytics tools for UK vehicle data, 
                 EV infrastructure coverage, and MOT failure prediction.
               </p>
               
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6">
-                <Button asChild size="lg" className="gap-2 font-medium">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
                   <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                     Open EV Charger Finder
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="gap-2 font-medium">
+                <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto">
                   <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
                     Open MOT Predictor
                     <ArrowRight className="h-4 w-4" />
@@ -79,32 +66,60 @@ export default function Index() {
               </div>
 
               {/* Trust line */}
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 justify-center lg:justify-start text-xs text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 justify-center lg:justify-start text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5">
-                  <Shield className="h-3.5 w-3.5" />
+                  <Shield className="h-4 w-4" />
                   Research-grade models
                 </span>
-                <span>•</span>
+                <span className="hidden sm:inline">•</span>
                 <span>UK-focused data</span>
-                <span>•</span>
+                <span className="hidden sm:inline">•</span>
                 <span>Not official DVSA advice</span>
               </div>
             </div>
 
-            {/* Right visual */}
-            <div className="hidden lg:flex items-center justify-center">
-              <div className="relative w-full max-w-md aspect-square">
-                {/* Abstract gradient panel */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-3xl" />
-                <div className="absolute inset-4 bg-gradient-to-tl from-primary/8 via-transparent to-primary/5 rounded-2xl border border-border/50" />
-                <div className="absolute inset-8 bg-card rounded-xl border border-border shadow-soft flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <Zap className="h-8 w-8 text-primary" />
-                    </div>
-                    <p className="text-sm font-medium text-foreground">Vehicle Intelligence</p>
-                    <p className="text-xs text-muted-foreground mt-1">AI-powered analytics</p>
+            {/* Right - Video Placeholder */}
+            <div className="hidden lg:block">
+              <div className="video-placeholder">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
+                    <Play className="h-7 w-7 text-primary ml-1" />
                   </div>
+                  <p className="text-sm font-medium text-foreground mb-1">Platform Overview</p>
+                  <p className="text-xs text-muted-foreground text-center max-w-xs">
+                    EV Charger maps • MOT Risk analysis • Council analytics
+                  </p>
+                </div>
+                
+                {/* Simulated UI elements */}
+                <div className="absolute top-4 left-4 right-4">
+                  <div className="flex gap-2">
+                    <div className="h-2 w-2 rounded-full bg-destructive/60" />
+                    <div className="h-2 w-2 rounded-full bg-amber-500/60" />
+                    <div className="h-2 w-2 rounded-full bg-green-500/60" />
+                  </div>
+                </div>
+                
+                {/* Bottom bar simulation */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="h-1 bg-border rounded-full overflow-hidden">
+                    <div className="h-full w-1/3 bg-primary/40 rounded-full" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile video placeholder */}
+            <div className="lg:hidden">
+              <div className="video-placeholder">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-3 border border-primary/20">
+                    <Play className="h-6 w-6 text-primary ml-0.5" />
+                  </div>
+                  <p className="text-sm font-medium text-foreground mb-1">Platform Overview</p>
+                  <p className="text-xs text-muted-foreground text-center">
+                    EV maps • MOT analysis • Council insights
+                  </p>
                 </div>
               </div>
             </div>
@@ -112,188 +127,108 @@ export default function Index() {
         </div>
       </section>
 
-      {/* What Autodun Does - Section A */}
-      <section className="section-lg">
+      {/* Core Tools Section */}
+      <section className="section-xl">
         <div className="container-main">
-          <div className="text-center mb-12">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              What We Do
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Core Tools
             </p>
-            <h2 className="mb-4">Intelligent tools for vehicle data</h2>
+            <h2 className="mb-4 text-2xl sm:text-3xl">
+              Production-ready analytics platform
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Purpose-built analytics for understanding EV infrastructure and vehicle health across the UK.
+              Three purpose-built tools for EV infrastructure, MOT risk analysis, and local authority planning.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            {capabilities.map((item) => (
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {tools.map((tool) => (
               <div 
-                key={item.title}
-                className="card-elevated text-center"
+                key={tool.title}
+                className="card-elevated flex flex-col"
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                  <item.icon className="h-6 w-6 text-primary" />
+                <div className="flex items-start justify-between mb-5">
+                  <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <tool.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <span className={tool.badge === "Beta" ? "badge-beta" : tool.badge === "New" ? "badge-status bg-green-500/10 text-green-600" : "badge-active"}>
+                    {tool.badge === "Active" && <span className="h-1.5 w-1.5 rounded-full bg-primary" />}
+                    {tool.badge}
+                  </span>
                 </div>
-                <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
+                <h3 className="text-lg font-semibold mb-3">{tool.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
+                  {tool.description}
                 </p>
+                <Button asChild className="gap-2 w-full">
+                  <a href={tool.href} target="_blank" rel="noopener noreferrer">
+                    Open Tool
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works - Section B */}
-      <section className="section-lg bg-secondary/40 border-y border-border">
+      {/* How It Works Section */}
+      <section className="section-xl bg-secondary/30 border-y border-border">
         <div className="container-main">
-          <div className="text-center mb-12">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
               How It Works
             </p>
-            <h2 className="mb-4">Simple, transparent process</h2>
+            <h2 className="mb-4 text-2xl sm:text-3xl">
+              Simple, transparent process
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Get insights in three straightforward steps.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <div key={step.number} className="text-center">
-                <div className="step-number mx-auto mb-5">
-                  {step.number}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tool Highlights - Section C */}
-      <section className="section-lg">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              Our Tools
-            </p>
-            <h2 className="mb-4">Active platform tools</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Production-ready tools for EV infrastructure and MOT analysis.
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-6">
-            {/* EV Charger Finder */}
-            <div className="card-elevated">
-              <div className="flex items-start justify-between mb-5">
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Zap className="h-6 w-6 text-primary" />
-                </div>
-                <span className="badge-active">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Active
-                </span>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">EV Charger Finder</h3>
-              <p className="text-muted-foreground mb-5 leading-relaxed">
-                Explore UK EV charging locations with coverage analysis, filtering by connector type, 
-                network provider, and availability status.
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+            <div className="text-center">
+              <div className="step-number mx-auto mb-6">1</div>
+              <h3 className="text-lg font-semibold mb-3">Enter your inputs</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                Provide location for EV charging or vehicle details for MOT risk analysis.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Interactive coverage maps
-                </li>
-                <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Filter by speed & connector
-                </li>
-                <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  UK-wide infrastructure data
-                </li>
-              </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild className="gap-2">
-                  <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
-                    Open Tool
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="gap-2">
-                  <Link to="/ev-charger-finder">
-                    Learn More
-                  </Link>
-                </Button>
-              </div>
             </div>
-
-            {/* MOT Predictor */}
-            <div className="card-elevated">
-              <div className="flex items-start justify-between mb-5">
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Cpu className="h-6 w-6 text-primary" />
-                </div>
-                <span className="badge-beta">
-                  Beta
-                </span>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">MOT Failure Risk Predictor</h3>
-              <p className="text-muted-foreground mb-5 leading-relaxed">
-                AI-generated risk assessment based on vehicle characteristics, mileage patterns, 
-                and historical MOT outcomes.
+            <div className="text-center">
+              <div className="step-number mx-auto mb-6">2</div>
+              <h3 className="text-lg font-semibold mb-3">Get AI insights</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                Our models process the data and generate coverage maps or risk estimates.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Risk band estimation
-                </li>
-                <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  PDF report generation
-                </li>
-                <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Guidance notes (not official advice)
-                </li>
-              </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild className="gap-2">
-                  <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
-                    Open Tool
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="gap-2">
-                  <Link to="/mot-predictor">
-                    Learn More
-                  </Link>
-                </Button>
-              </div>
+            </div>
+            <div className="text-center">
+              <div className="step-number mx-auto mb-6">3</div>
+              <h3 className="text-lg font-semibold mb-3">Take action</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                Find nearby chargers or prepare for your MOT with informed guidance.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="section-md bg-secondary/40 border-t border-border">
+      <section className="section-xl">
         <div className="container-main text-center">
-          <h2 className="mb-4">Ready to explore?</h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+          <h2 className="mb-4 text-2xl sm:text-3xl">Ready to explore?</h2>
+          <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
             Access our research tools for EV infrastructure insights and MOT risk analysis.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" className="gap-2">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="gap-2 w-full sm:w-auto">
               <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                 EV Charger Finder
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="gap-2">
+            <Button asChild variant="outline" size="lg" className="gap-2 w-full sm:w-auto">
               <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
                 MOT Predictor
                 <ArrowRight className="h-4 w-4" />
