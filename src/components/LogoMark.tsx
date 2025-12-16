@@ -3,16 +3,17 @@ import autodunLogo from "@/assets/autodun-logo.png";
 
 interface LogoMarkProps {
   className?: string;
-  size?: "sm" | "md" | "lg" | "xl" | "hero";
+  size?: "sm" | "header" | "md" | "lg" | "xl" | "hero";
 }
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
-  const sizes = {
+  const sizes: Record<string, string> = {
     sm: "h-6",
-    md: "h-[30px]",
+    header: "h-[30px]",
+    md: "h-8",
     lg: "h-10",
     xl: "h-12",
-    hero: "", // Custom styling via style prop
+    hero: "",
   };
 
   if (size === "hero") {
@@ -20,8 +21,8 @@ export function LogoMark({ className, size = "md" }: LogoMarkProps) {
       <img 
         src={autodunLogo} 
         alt="AUTODUN" 
-        className={cn("w-auto block mx-auto", className)}
-        style={{ height: 'clamp(60px, 8vw, 120px)' }}
+        className={cn("w-auto block", className)}
+        style={{ height: 'clamp(48px, 6vw, 72px)' }}
       />
     );
   }
