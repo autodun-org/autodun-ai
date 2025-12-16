@@ -139,40 +139,39 @@
     max-width: 900px;
   }
   
-  /* Hierarchical spacing system */
+  /* Normalized spacing system - single source of truth */
   
-  /* Hero sections: generous bottom padding (140px desktop, 96px mobile) */
+  /* Hero sections: no top padding (header handles it), generous bottom */
   .section-hero {
-    @apply pt-16 pb-24 md:pt-20 md:pb-[140px];
+    @apply pt-12 pb-[72px] md:pt-16 md:pb-[100px];
   }
   
-  /* Major sections: 110px padding desktop, 72px mobile */
+  /* Major content sections: 72px top separation */
   .section-major {
-    @apply py-[72px] md:py-[110px];
+    @apply py-[72px] md:py-[72px];
   }
   
-  /* Standard sections: 96px desktop, 64px mobile */
+  /* Standard sections */
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16;
   }
   
-  /* Compact sections: for banners/callouts */
+  /* Compact sections: banners/callouts */
   .section-compact {
-    @apply py-6 md:py-8;
+    @apply py-5 md:py-6;
   }
   
-  /* Section header spacing: 36px to content */
+  /* Section header: title → subtitle 16px, subtitle → content 32px */
   .section-header {
-    @apply mb-9;
+    @apply mb-8;
   }
   
-  /* Grouped elements spacing: 24-32px */
-  .group-spacing {
-    @apply gap-6 md:gap-8;
+  .section-header h2 {
+    @apply mb-4;
   }
   
-  .group-spacing-tight {
-    @apply gap-4 md:gap-6;
+  .section-header p {
+    @apply mb-0;
   }
   
   .prose-body {

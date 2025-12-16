@@ -48,11 +48,11 @@ export default function DataUsage() {
       {/* Principles */}
       <section className="section-major">
         <div className="container-main">
-          <div className="section-header">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+          <div className="mb-8">
+            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               Data Governance
             </p>
-            <h2 className="mb-3 text-2xl sm:text-3xl">Our Data Principles</h2>
+            <h2 className="mb-4 text-2xl sm:text-3xl">Our Data Principles</h2>
             <p className="prose-body max-w-xl">
               Core commitments governing how we handle and process data.
             </p>

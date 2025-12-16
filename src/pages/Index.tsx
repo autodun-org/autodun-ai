@@ -89,8 +89,8 @@ export default function Index() {
       {/* Core Tools Section */}
       <section className="section-major">
         <div className="container-main">
-          <div className="text-center section-header">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+          <div className="text-center mb-8">
+            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               Core Tools
             </p>
             <h2 className="mb-4 text-2xl sm:text-3xl">
@@ -135,8 +135,8 @@ export default function Index() {
       {/* How It Works Section */}
       <section className="section-major bg-secondary/30 border-y border-border">
         <div className="container-main">
-          <div className="text-center section-header">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+          <div className="text-center mb-8">
+            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               How It Works
             </p>
             <h2 className="mb-4 text-2xl sm:text-3xl">
