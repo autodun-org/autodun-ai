@@ -29,14 +29,11 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container-main">
+        {/* ✅ Slightly taller to comfortably fit bigger logo */}
         <nav className="flex h-20 items-center justify-between">
-          {/* Logo ONLY */}
+          {/* ✅ Logo only (no AUTODUN text) */}
           <Link to="/" className="flex items-center">
-            {/* Big header logo */}
-            <LogoMark
-              size="header"
-              className="h-12 w-[180px] max-w-none object-contain"
-            />
+            <LogoMark size="header" className="h-12 md:h-14" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -90,7 +87,11 @@ export function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Toggle menu</span>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </nav>
 
