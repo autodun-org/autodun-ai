@@ -8,17 +8,11 @@ interface LogoMarkProps {
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
   const sizes = {
-    sm: "h-16",
-    md: "h-28",
-    lg: "h-36",
-    xl: "h-48",
+    sm: "h-20",
+    md: "h-36",
+    lg: "h-40",
+    xl: "h-52",
   };
 
-  return (
-    <img
-      src={autodunLogo}
-      alt="AUTODUN"
-      className={cn(sizes[size], "w-auto", className)}
-    />
-  );
+  return <img src={autodunLogo} alt="AUTODUN" className={cn(sizes[size], "w-auto", className)} />;
 }
