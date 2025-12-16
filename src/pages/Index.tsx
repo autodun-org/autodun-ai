@@ -33,31 +33,26 @@ export default function Index() {
       <section className="section-padding border-b border-border">
         <div className="container-narrow">
           <div className="max-w-2xl">
-            <div className="animate-fade-in-up">
-              <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
-                Vehicle AI & Data Platform
-              </p>
-              <h1 className="mb-6 text-balance">
-                Autodun
-              </h1>
-              <p className="text-lg prose-body mb-10 max-w-xl">
-                An independent platform delivering AI-driven tools for vehicle data analysis, 
-                EV infrastructure research, and MOT risk prediction. Built for research 
-                and decision-support applications.
-              </p>
-            </div>
+            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+              Vehicle AI & Data Platform
+            </p>
+            <h1 className="mb-6 text-balance">
+              Autodun
+            </h1>
+            <p className="text-base md:text-lg prose-body mb-8 md:mb-10 max-w-xl">
+              An independent platform delivering AI-driven tools for vehicle data analysis, 
+              EV infrastructure research, and MOT risk prediction. Built for research 
+              and decision-support applications.
+            </p>
             
-            <div 
-              className="flex flex-col sm:flex-row gap-3 mb-10 animate-fade-in-up"
-              style={{ animationDelay: "100ms" }}
-            >
-              <Button asChild size="lg" className="gap-2 font-medium">
+            <div className="flex flex-col sm:flex-row gap-3 mb-8 md:mb-10">
+              <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
                 <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                   Open EV Charger Finder
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="gap-2 font-medium">
+              <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto">
                 <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
                   Open MOT Predictor
                   <ArrowRight className="h-4 w-4" />
@@ -65,10 +60,7 @@ export default function Index() {
               </Button>
             </div>
 
-            <p 
-              className="text-xs text-muted-foreground border-l-2 border-border pl-4 animate-fade-in"
-              style={{ animationDelay: "200ms" }}
-            >
+            <p className="text-xs text-muted-foreground border-l-2 border-border pl-4">
               Not official DVSA or government advice. Research and educational use only.
             </p>
           </div>
@@ -78,19 +70,18 @@ export default function Index() {
       {/* Capabilities Section */}
       <section className="section-padding">
         <div className="container-narrow">
-          <div className="mb-12">
+          <div className="mb-10 md:mb-12">
             <h2 className="mb-3">Platform Capabilities</h2>
             <p className="prose-body max-w-xl">
               Core analytical tools for vehicle data research and infrastructure analysis.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            {capabilities.map((item, index) => (
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+            {capabilities.map((item) => (
               <div 
                 key={item.title}
-                className="p-5 card-elevated animate-fade-in-up"
-                style={{ animationDelay: `${index * 75}ms` }}
+                className="p-5 card-elevated"
               >
                 <div className="h-9 w-9 rounded-md bg-secondary flex items-center justify-center mb-4">
                   <item.icon className="h-4.5 w-4.5 text-foreground" />
@@ -108,15 +99,15 @@ export default function Index() {
       {/* Available Tools Section */}
       <section className="section-padding bg-secondary/40 border-y border-border">
         <div className="container-narrow">
-          <div className="mb-10">
+          <div className="mb-8 md:mb-10">
             <p className="text-xs font-medium text-primary mb-2 tracking-wide uppercase">
               Available Tools
             </p>
             <h2>Active Platform Tools</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="p-6 card-elevated">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+            <div className="p-5 md:p-6 card-elevated">
               <div className="flex items-start justify-between mb-4">
                 <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
                   <Zap className="h-5 w-5 text-primary" />
@@ -130,7 +121,7 @@ export default function Index() {
               <p className="text-sm prose-body mb-5">
                 Explore EV charging locations, infrastructure coverage, and public charging data analysis.
               </p>
-              <Button asChild size="sm" variant="outline" className="gap-2">
+              <Button asChild size="sm" variant="outline" className="gap-2 w-full sm:w-auto">
                 <Link to="/ev-charger-finder">
                   View Details
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -138,7 +129,7 @@ export default function Index() {
               </Button>
             </div>
 
-            <div className="p-6 card-elevated">
+            <div className="p-5 md:p-6 card-elevated">
               <div className="flex items-start justify-between mb-4">
                 <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
                   <Cpu className="h-5 w-5 text-primary" />
@@ -151,7 +142,7 @@ export default function Index() {
               <p className="text-sm prose-body mb-5">
                 AI-generated risk assessment based on vehicle characteristics and historical patterns.
               </p>
-              <Button asChild size="sm" variant="outline" className="gap-2">
+              <Button asChild size="sm" variant="outline" className="gap-2 w-full sm:w-auto">
                 <Link to="/mot-predictor">
                   View Details
                   <ArrowRight className="h-3.5 w-3.5" />
