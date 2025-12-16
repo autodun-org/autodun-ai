@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Logo } from "@/components/Logo";
+import { StylisedA } from "@/components/StylisedA";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -21,10 +21,12 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-narrow">
         <div className="flex h-14 items-center justify-between">
-          {/* Logo + Brand */}
-          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-            <Logo size="md" className="text-foreground" />
-            <span className="font-semibold text-base tracking-tight">Autodun</span>
+          {/* Typographic Logo */}
+          <Link to="/" className="flex items-baseline shrink-0 group">
+            <span className="font-semibold text-lg tracking-tight text-foreground">
+              <StylisedA className="text-foreground" />
+              <span>utodun</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
