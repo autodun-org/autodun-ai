@@ -21,7 +21,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+      <div className="container-main flex h-16 items-center justify-between">
         {/* LOGO ONLY (removed AUTODUN text) */}
         <Link
           to="/"
@@ -46,12 +46,15 @@ export const Header = () => {
               {link.label}
             </Link>
           ))}
-          <a
-            href="mailto:info@autodun.com"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          <Link
+            to="/contact"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-foreground",
+              isActive("/contact") ? "text-foreground" : "text-muted-foreground"
+            )}
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -70,7 +73,7 @@ export const Header = () => {
       {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="border-t md:hidden">
-          <div className="mx-auto max-w-7xl px-4 py-3">
+          <div className="container-main py-3">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
@@ -87,13 +90,18 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="mailto:info@autodun.com"
+              <Link
+                to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted"
+                className={cn(
+                  "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted",
+                  isActive("/contact")
+                    ? "bg-muted text-foreground"
+                    : "text-muted-foreground"
+                )}
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         </div>
