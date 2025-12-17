@@ -22,17 +22,17 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+        {/* LOGO ONLY (removed AUTODUN text) */}
         <Link
           to="/"
-          className="flex items-center gap-3"
+          className="flex items-center"
           onClick={() => setMobileMenuOpen(false)}
+          aria-label="Autodun Home"
         >
-          <LogoMark size="header" />
-          <span className="text-lg font-semibold leading-none tracking-tight">
-            AUTODUN
-          </span>
+          <LogoMark size="header" className="h-9 md:h-10 lg:h-12 w-auto" />
         </Link>
 
+        {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
@@ -52,6 +52,7 @@ export const Header = () => {
           </Button>
         </nav>
 
+        {/* Mobile Menu Button */}
         <div className="flex items-center md:hidden">
           <Button
             variant="ghost"
@@ -59,15 +60,12 @@ export const Header = () => {
             aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen((v) => !v)}
           >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
       </div>
 
+      {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="border-t md:hidden">
           <div className="mx-auto max-w-7xl px-4 py-3">
