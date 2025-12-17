@@ -29,7 +29,7 @@ export const Header = () => {
           onClick={() => setMobileMenuOpen(false)}
           aria-label="Autodun Home"
         >
-          <LogoMark size="header" className="h-9 md:h-10 lg:h-12 w-auto" />
+          <LogoMark size="header" className="h-8 md:h-9 lg:h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
