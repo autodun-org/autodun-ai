@@ -33,22 +33,20 @@ export const Footer = () => {
                 {l.label}
               </Link>
             ))}
+            <a
+              href="mailto:info@autodun.com"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Contact
+            </a>
           </div>
         </div>
 
         {/* Bottom row */}
         <div className="mt-10 flex flex-col gap-3 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
-            <p className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()} All rights reserved.
-            </p>
-            <a 
-              href="mailto:info@autodun.com" 
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Contact: info@autodun.com
-            </a>
-          </div>
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} All rights reserved.
+          </p>
 
           <p className="text-xs text-muted-foreground">
             Not official DVSA advice.

@@ -46,6 +46,12 @@ export const Header = () => {
               {link.label}
             </Link>
           ))}
+          <a
+            href="mailto:info@autodun.com"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Contact
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -81,6 +87,13 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href="mailto:info@autodun.com"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted"
+              >
+                Contact
+              </a>
             </div>
           </div>
         </div>
