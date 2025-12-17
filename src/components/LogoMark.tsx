@@ -7,32 +7,21 @@ interface LogoMarkProps {
 }
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
-  const sizes: Record<string, string> = {
-    sm: "h-7",
-    // ✅ bigger header logo
-    header: "h-12", // 48px
-    md: "h-9",
-    lg: "h-11",
-    xl: "h-14",
-    hero: "",
+  const sizes: Record<NonNullable<LogoMarkProps["size"]>, string> = {
+    sm: "h-6",
+    header: "h-9", // 36px: best match for most headers
+    md: "h-8",
+    lg: "h-10",
+    xl: "h-12",
+    hero: "h-14",
   };
-
-  if (size === "hero") {
-    return (
-      <img
-        src={autodunLogo}
-        alt="AUTODUN"
-        className={cn("w-auto block", className)}
-        style={{ height: "clamp(48px, 6vw, 72px)" }}
-      />
-    );
-  }
 
   return (
     <img
       src={autodunLogo}
       alt="AUTODUN"
-      className={cn("w-auto block", sizes[size], className)}
+      className={cn("block w-auto object-contain shrink-0", sizes[size], className)}
+      draggable={false}
     />
   );
 }
