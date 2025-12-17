@@ -42,7 +42,7 @@ export default function Index() {
             {/* Left content */}
             <div className="text-center lg:text-left">
               <div className="flex items-center gap-3 justify-center lg:justify-start mb-6">
-                <LogoMark size="hero" />
+                <LogoMark size="md" className="opacity-[0.06] max-w-[280px] md:max-w-[320px]" />
               </div>
 
               <h1 className="text-balance mb-5 text-3xl sm:text-4xl lg:text-5xl">
