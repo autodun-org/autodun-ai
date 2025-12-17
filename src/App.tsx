@@ -21,20 +21,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-
-          {/* Existing tool pages */}
           <Route path="/ev-charger-finder" element={<EVChargerFinder />} />
           <Route path="/mot-predictor" element={<MOTPredictor />} />
           <Route path="/data-usage" element={<DataUsage />} />
           <Route path="/about" element={<About />} />
-
-          {/* ✅ Add missing routes used by Header links (temporary mapping) */}
-          <Route path="/for-drivers" element={<EVChargerFinder />} />
-          <Route path="/for-councils" element={<DataUsage />} />
-          <Route path="/roadmap" element={<DataUsage />} />
-          <Route path="/contact" element={<About />} />
-
-          {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
