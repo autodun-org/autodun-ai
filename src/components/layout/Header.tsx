@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { LogoMark } from "@/components/LogoMark"; // ✅ use your real LogoMark
+import { LogoMark } from "@/components/LogoMark";
 
-const Header = () => {
+export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -21,24 +21,18 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
-      {/* ✅ Consistent header height + center alignment */}
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        {/* Brand */}
         <Link
           to="/"
           className="flex items-center gap-3"
           onClick={() => setMobileMenuOpen(false)}
         >
-          {/* ✅ Proper logo sizing */}
           <LogoMark size="header" />
-
-          {/* ✅ Text aligned to logo (no baseline gap) */}
           <span className="text-lg font-semibold leading-none tracking-tight">
             AUTODUN
           </span>
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
@@ -58,7 +52,6 @@ const Header = () => {
           </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
         <div className="flex items-center md:hidden">
           <Button
             variant="ghost"
@@ -66,12 +59,15 @@ const Header = () => {
             aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen((v) => !v)}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </Button>
         </div>
       </div>
 
-      {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="border-t md:hidden">
           <div className="mx-auto max-w-7xl px-4 py-3">
@@ -83,7 +79,9 @@ const Header = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted",
-                    isActive(link.path) ? "bg-muted text-foreground" : "text-muted-foreground"
+                    isActive(link.path)
+                      ? "bg-muted text-foreground"
+                      : "text-muted-foreground"
                   )}
                 >
                   {link.label}
