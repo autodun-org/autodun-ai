@@ -22,31 +22,29 @@ export default function MOTPredictor() {
     <Layout>
       {/* Hero */}
       <section className="section-hero border-b border-border hero-gradient">
-        <div className="container-main">
-          <div className="max-w-2xl">
-            <div className="animate-fade-in-up">
-              <span className="badge-beta mb-5">
-                Beta
-              </span>
-              
-              <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
-                MOT Failure Risk Predictor
-              </h1>
-              
-              <p className="text-lg prose-body mb-8 max-w-xl">
-                This tool estimates MOT failure risk using AI models trained on UK-style MOT data. 
-                Input your vehicle details to receive a risk assessment based on statistical patterns 
-                observed in historical test results.
-              </p>
-            </div>
-
-            <Button asChild size="lg" className="gap-2 font-medium animate-fade-in-up w-full sm:w-auto" style={{ animationDelay: "100ms" }}>
-              <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
-                Launch MOT Predictor Tool
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
+        <div className="container-narrow text-center">
+          <div className="animate-fade-in-up">
+            <span className="badge-beta mb-5 inline-flex">
+              Beta
+            </span>
+            
+            <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
+              MOT Failure Risk Predictor
+            </h1>
+            
+            <p className="text-lg prose-body mb-8 mx-auto">
+              This tool estimates MOT failure risk using AI models trained on UK-style MOT data. 
+              Input your vehicle details to receive a risk assessment based on statistical patterns 
+              observed in historical test results.
+            </p>
           </div>
+
+          <Button asChild size="lg" className="gap-2 font-medium animate-fade-in-up w-full sm:w-auto" style={{ animationDelay: "100ms" }}>
+            <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
+              Launch MOT Predictor Tool
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </Button>
         </div>
       </section>
 
@@ -103,13 +101,13 @@ export default function MOTPredictor() {
 
       {/* Model Inputs */}
       <section className="section-major">
-        <div className="container-main">
-          <div className="mb-8">
+        <div className="container-narrow">
+          <div className="mb-8 text-center">
             <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               Input Parameters
             </p>
             <h2 className="mb-4 text-2xl sm:text-3xl">Model Inputs</h2>
-            <p className="prose-body max-w-xl">
+            <p className="prose-body mx-auto">
               The prediction model uses the following vehicle characteristics.
             </p>
           </div>
@@ -118,7 +116,7 @@ export default function MOTPredictor() {
             {inputs.map((input, index) => (
               <div 
                 key={input.label}
-                className="flex gap-4 p-5 card-elevated animate-fade-in-up"
+                className="flex gap-4 p-5 card-elevated animate-fade-in-up text-left"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
                 <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -136,41 +134,39 @@ export default function MOTPredictor() {
 
       {/* How the Model Works */}
       <section className="section-major bg-secondary/30 border-y border-border">
-        <div className="container-main">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
-              Methodology
+        <div className="container-narrow text-center">
+          <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+            Methodology
+          </p>
+          <h2 className="mb-5 text-2xl sm:text-3xl">How the Model Works</h2>
+          <div className="space-y-5 prose-body mx-auto">
+            <p>
+              The MOT Failure Risk Predictor uses machine learning models trained on historical 
+              UK MOT test data. The model identifies statistical patterns that correlate with 
+              test outcomes.
             </p>
-            <h2 className="mb-5 text-2xl sm:text-3xl">How the Model Works</h2>
-            <div className="space-y-5 prose-body">
-              <p>
-                The MOT Failure Risk Predictor uses machine learning models trained on historical 
-                UK MOT test data. The model identifies statistical patterns that correlate with 
-                test outcomes.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-card border border-border">
-                  <h4 className="font-medium text-foreground mb-2 text-sm">Training Data</h4>
-                  <p className="text-sm">Historical MOT test results with vehicle characteristics</p>
-                </div>
-                <div className="p-4 rounded-xl bg-card border border-border">
-                  <h4 className="font-medium text-foreground mb-2 text-sm">Output</h4>
-                  <p className="text-sm">Probability estimate of MOT failure risk</p>
-                </div>
+            <div className="grid sm:grid-cols-2 gap-4 text-left">
+              <div className="p-4 rounded-xl bg-card border border-border">
+                <h4 className="font-medium text-foreground mb-2 text-sm">Training Data</h4>
+                <p className="text-sm">Historical MOT test results with vehicle characteristics</p>
               </div>
-              <p>
-                Results are presented as risk bands (Low, Medium, High) with explanatory notes. 
-                PDF reports can be generated for record-keeping purposes.
-              </p>
+              <div className="p-4 rounded-xl bg-card border border-border">
+                <h4 className="font-medium text-foreground mb-2 text-sm">Output</h4>
+                <p className="text-sm">Probability estimate of MOT failure risk</p>
+              </div>
             </div>
+            <p>
+              Results are presented as risk bands (Low, Medium, High) with explanatory notes. 
+              PDF reports can be generated for record-keeping purposes.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Disclaimer */}
       <section className="section-padding">
-        <div className="container-main">
-          <div className="flex gap-4 items-start p-5 lg:p-6 card-elevated border-amber-200 bg-amber-50/50 max-w-3xl">
+        <div className="container-narrow">
+          <div className="flex gap-4 items-start p-5 lg:p-6 card-elevated border-amber-200 bg-amber-50/50">
             <div className="h-10 w-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
               <AlertTriangle className="h-5 w-5 text-amber-700" />
             </div>

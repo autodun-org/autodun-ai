@@ -47,39 +47,37 @@ export default function EVChargerFinder() {
     <Layout>
       {/* Hero */}
       <section className="section-hero border-b border-border hero-gradient">
-        <div className="container-main">
-          <div className="max-w-2xl">
-            <div className="animate-fade-in-up">
-              <span className="badge-active mb-5">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Active Tool
-              </span>
-              
-              <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
-                EV Charger Finder & Infrastructure Analytics
-              </h1>
-              
-              <p className="text-lg prose-body mb-8 max-w-xl">
-                Explore EV charging locations and infrastructure coverage using public datasets 
-                and analytics. This tool supports research into charger availability, infrastructure 
-                planning, and EV adoption trends.
-              </p>
-            </div>
+        <div className="container-narrow text-center">
+          <div className="animate-fade-in-up">
+            <span className="badge-active mb-5 inline-flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              Active Tool
+            </span>
+            
+            <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
+              EV Charger Finder & Infrastructure Analytics
+            </h1>
+            
+            <p className="text-lg prose-body mb-8 mx-auto">
+              Explore EV charging locations and infrastructure coverage using public datasets 
+              and analytics. This tool supports research into charger availability, infrastructure 
+              planning, and EV adoption trends.
+            </p>
+          </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
-              <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
-                <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
-                  Open EV Charger Finder
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto">
-                <a href="https://ev.autodun.com/ev-charging-council-dashboard" target="_blank" rel="noopener noreferrer">
-                  Council Analytics Dashboard
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+            <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
+              <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
+                Open EV Charger Finder
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto">
+              <a href="https://ev.autodun.com/ev-charging-council-dashboard" target="_blank" rel="noopener noreferrer">
+                Council Analytics Dashboard
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -178,13 +176,13 @@ export default function EVChargerFinder() {
 
       {/* Capabilities */}
       <section className="section-major">
-        <div className="container-main">
-          <div className="mb-8">
+        <div className="container-narrow">
+          <div className="mb-8 text-center">
             <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               Features
             </p>
             <h2 className="mb-4 text-2xl sm:text-3xl">Tool Capabilities</h2>
-            <p className="prose-body max-w-xl">
+            <p className="prose-body mx-auto">
               Core features for EV infrastructure research and analysis.
             </p>
           </div>
@@ -193,7 +191,7 @@ export default function EVChargerFinder() {
             {capabilities.map((item, index) => (
               <div 
                 key={item.label}
-                className="flex gap-4 p-5 card-elevated animate-fade-in-up"
+                className="flex gap-4 p-5 card-elevated animate-fade-in-up text-left"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
                 <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -211,50 +209,48 @@ export default function EVChargerFinder() {
 
       {/* Use Cases */}
       <section className="section-major bg-secondary/30 border-y border-border">
-        <div className="container-main">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
-              Applications
-            </p>
-            <h2 className="mb-5 text-2xl sm:text-3xl">Research & Decision-Support Use</h2>
-            <p className="prose-body mb-6">
-              The EV Charger Finder is designed for researchers, analysts, and planners who require 
-              data-driven insights into EV charging infrastructure. Applications include:
-            </p>
-            <ul className="space-y-3 text-sm prose-body">
-              <li className="flex gap-3 items-start">
-                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                </span>
-                Infrastructure coverage analysis and gap identification
-              </li>
-              <li className="flex gap-3 items-start">
-                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                </span>
-                Public charging network distribution research
-              </li>
-              <li className="flex gap-3 items-start">
-                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                </span>
-                EV adoption trend analysis and forecasting support
-              </li>
-              <li className="flex gap-3 items-start">
-                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                </span>
-                Regional infrastructure planning and assessment
-              </li>
-            </ul>
-          </div>
+        <div className="container-narrow text-center">
+          <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+            Applications
+          </p>
+          <h2 className="mb-5 text-2xl sm:text-3xl">Research & Decision-Support Use</h2>
+          <p className="prose-body mx-auto mb-6">
+            The EV Charger Finder is designed for researchers, analysts, and planners who require 
+            data-driven insights into EV charging infrastructure. Applications include:
+          </p>
+          <ul className="space-y-3 text-sm prose-body text-left max-w-lg mx-auto">
+            <li className="flex gap-3 items-start">
+              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </span>
+              Infrastructure coverage analysis and gap identification
+            </li>
+            <li className="flex gap-3 items-start">
+              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </span>
+              Public charging network distribution research
+            </li>
+            <li className="flex gap-3 items-start">
+              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </span>
+              EV adoption trend analysis and forecasting support
+            </li>
+            <li className="flex gap-3 items-start">
+              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </span>
+              Regional infrastructure planning and assessment
+            </li>
+          </ul>
         </div>
       </section>
 
       {/* Disclaimer */}
       <section className="section-padding">
-        <div className="container-main">
-          <div className="flex gap-4 items-start p-5 lg:p-6 card-elevated border-amber-200 bg-amber-50/50 max-w-3xl">
+        <div className="container-narrow">
+          <div className="flex gap-4 items-start p-5 lg:p-6 card-elevated border-amber-200 bg-amber-50/50">
             <div className="h-10 w-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
               <AlertTriangle className="h-5 w-5 text-amber-700" />
             </div>
