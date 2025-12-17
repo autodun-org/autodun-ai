@@ -1,149 +1,106 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ExternalLink } from "lucide-react";
-import { LogoMark } from "@/components/LogoMark";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { LogoMark } from "@/components/LogoMark"; // ✅ use your real LogoMark
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "EV Charger Finder", href: "/ev-charger-finder" },
-  { name: "MOT Predictor", href: "/mot-predictor" },
-  {
-    name: "Council Dashboard",
-    href: "https://ev.autodun.com/ev-charging-council-dashboard",
-    external: true,
-  },
-  { name: "Data Usage", href: "/data-usage" },
-  { name: "About", href: "/about" },
-];
-
-export function Header() {
-  const location = useLocation();
+const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const isActive = (href: string) => {
-    if (href === "/") return location.pathname === "/";
-    return location.pathname.startsWith(href);
-  };
+  const isActive = (path: string) => location.pathname === path;
+
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/for-drivers", label: "For Drivers" },
+    { path: "/for-councils", label: "For Councils" },
+    { path: "/roadmap", label: "Roadmap" },
+    { path: "/about", label: "About" },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
-      <div className="container-main">
-        {/* ✅ Slightly taller to comfortably fit bigger logo */}
-        <nav className="flex h-20 items-center justify-between">
-          {/* ✅ Logo only (no AUTODUN text) */}
-          <Link to="/" className="flex items-center">
-            <LogoMark size="header" className="h-12 md:h-14" />
-          </Link>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
+      {/* ✅ Consistent header height + center alignment */}
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+        {/* Brand */}
+        <Link
+          to="/"
+          className="flex items-center gap-3"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          {/* ✅ Proper logo sizing */}
+          <LogoMark size="header" />
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navigation.map((item) =>
-              item.external ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/50 inline-flex items-center gap-1"
-                >
-                  {item.name}
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                    isActive(item.href)
-                      ? "text-foreground bg-secondary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              )
-            )}
-          </div>
+          {/* ✅ Text aligned to logo (no baseline gap) */}
+          <span className="text-lg font-semibold leading-none tracking-tight">
+            AUTODUN
+          </span>
+        </Link>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button asChild size="sm" className="gap-2">
-              <a
-                href="https://ev.autodun.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Launch Tools
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-            </Button>
-          </div>
+        {/* Desktop Nav */}
+        <nav className="hidden items-center gap-6 md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-foreground",
+                isActive(link.path) ? "text-foreground" : "text-muted-foreground"
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="lg:hidden p-2 -mr-2 text-muted-foreground hover:text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <span className="sr-only">Toggle menu</span>
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          <Button asChild className="ml-2">
+            <Link to="/contact">Contact</Link>
+          </Button>
         </nav>
 
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-border py-4 animate-fade-in">
-            <div className="flex flex-col gap-1">
-              {navigation.map((item) =>
-                item.external ? (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-3 py-2.5 text-sm font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/50 inline-flex items-center gap-1"
-                  >
-                    {item.name}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                      isActive(item.href)
-                        ? "text-foreground bg-secondary"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              )}
+        {/* Mobile Menu Button */}
+        <div className="flex items-center md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Toggle menu"
+            onClick={() => setMobileMenuOpen((v) => !v)}
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+        </div>
+      </div>
 
-              <div className="pt-3 mt-2 border-t border-border">
-                <Button asChild className="w-full gap-2">
-                  <a
-                    href="https://ev.autodun.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Launch Tools
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
+      {/* Mobile Nav */}
+      {mobileMenuOpen && (
+        <div className="border-t md:hidden">
+          <div className="mx-auto max-w-7xl px-4 py-3">
+            <div className="flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted",
+                    isActive(link.path) ? "bg-muted text-foreground" : "text-muted-foreground"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              <Button asChild className="mt-2">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  Contact
+                </Link>
+              </Button>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
-}
+};
+
+export default Header;
