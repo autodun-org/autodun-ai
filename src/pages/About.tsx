@@ -29,13 +29,13 @@ export default function About() {
     <Layout>
       {/* Hero */}
       <section className="section-hero border-b border-border hero-gradient">
-        <div className="container-main">
-          <div className="max-w-2xl animate-fade-in-up">
+        <div className="container-narrow text-center">
+          <div className="animate-fade-in-up">
             <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
               About Autodun
             </h1>
             
-            <div className="space-y-4 text-lg prose-body max-w-xl">
+            <div className="space-y-4 text-lg prose-body mx-auto">
               <p>
                 Autodun is an independent AI/ML research project focused on vehicle data analysis 
                 and predictive modelling. Our work centres on developing practical tools for 
@@ -53,13 +53,13 @@ export default function About() {
 
       {/* Research Goals */}
       <section className="section-major">
-        <div className="container-main">
-          <div className="mb-8">
+        <div className="container-narrow">
+          <div className="mb-8 text-center">
             <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
               Mission
             </p>
             <h2 className="mb-4 text-2xl sm:text-3xl">Research Goals</h2>
-            <p className="prose-body max-w-xl">
+            <p className="prose-body mx-auto">
               Core objectives guiding our research and development work.
             </p>
           </div>
@@ -86,28 +86,26 @@ export default function About() {
 
       {/* Technical Approach */}
       <section className="section-major bg-secondary/30 border-y border-border">
-        <div className="container-main">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
-              Methodology
+        <div className="container-narrow text-center">
+          <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
+            Methodology
+          </p>
+          <h2 className="mb-5 text-2xl sm:text-3xl">Technical Approach</h2>
+          <div className="space-y-4 prose-body mx-auto">
+            <p>
+              Our models are built using established machine learning techniques, trained on 
+              UK-style vehicle and MOT data. We prioritise model interpretability and provide 
+              clear documentation of our methodologies.
             </p>
-            <h2 className="mb-5 text-2xl sm:text-3xl">Technical Approach</h2>
-            <div className="space-y-4 prose-body">
-              <p>
-                Our models are built using established machine learning techniques, trained on 
-                UK-style vehicle and MOT data. We prioritise model interpretability and provide 
-                clear documentation of our methodologies.
-              </p>
-              <p>
-                Autodun operates independently and is not affiliated with or endorsed by DVSA 
-                or any government agency. Our tools are intended for research and educational 
-                purposes, providing supplementary analysis rather than official determinations.
-              </p>
-              <p>
-                The platform is continuously developed, with ongoing work to improve model 
-                accuracy, expand analytical capabilities, and ensure responsible data use.
-              </p>
-            </div>
+            <p>
+              Autodun operates independently and is not affiliated with or endorsed by DVSA 
+              or any government agency. Our tools are intended for research and educational 
+              purposes, providing supplementary analysis rather than official determinations.
+            </p>
+            <p>
+              The platform is continuously developed, with ongoing work to improve model 
+              accuracy, expand analytical capabilities, and ensure responsible data use.
+            </p>
           </div>
         </div>
       </section>

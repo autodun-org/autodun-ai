@@ -5,11 +5,10 @@ import { LogoMark } from "@/components/LogoMark";
 export const Footer = () => {
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/for-drivers", label: "For Drivers" },
-    { path: "/for-councils", label: "For Councils" },
-    { path: "/roadmap", label: "Roadmap" },
+    { path: "/ev-charger-finder", label: "EV Charger Finder" },
+    { path: "/mot-predictor", label: "MOT Predictor" },
+    { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
   ];
 
   return (
