@@ -7,20 +7,20 @@ interface LogoMarkProps {
 }
 
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
-  const sizes: Record<NonNullable<LogoMarkProps["size"]>, string> = {
+  const sizes = {
     sm: "h-6",
-    header: "h-9", // 36px: best match for most headers
+    header: "h-12",   // now ACTUALLY looks big
     md: "h-8",
     lg: "h-10",
     xl: "h-12",
-    hero: "h-14",
+    hero: "h-16",
   };
 
   return (
     <img
       src={autodunLogo}
       alt="AUTODUN"
-      className={cn("block w-auto object-contain shrink-0", sizes[size], className)}
+      className={cn("block w-auto object-contain", sizes[size], className)}
       draggable={false}
     />
   );
