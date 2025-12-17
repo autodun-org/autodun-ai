@@ -9,9 +9,9 @@ interface LogoMarkProps {
 export function LogoMark({ className, size = "md" }: LogoMarkProps) {
   const sizes = {
     sm: "h-6",
-    header: "h-12",   // now ACTUALLY looks big
-    md: "h-8",
-    lg: "h-10",
+    header: "h-9",   // now ACTUALLY looks big
+    md: "h-10",
+    lg: "h-12",
     xl: "h-12",
     hero: "h-16",
   };
