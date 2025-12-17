@@ -13,9 +13,9 @@ export const Header = () => {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/for-drivers", label: "For Drivers" },
-    { path: "/for-councils", label: "For Councils" },
-    { path: "/roadmap", label: "Roadmap" },
+    { path: "/ev-charger-finder", label: "EV Charger Finder" },
+    { path: "/mot-predictor", label: "MOT Predictor" },
+    { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
   ];
 
@@ -46,10 +46,6 @@ export const Header = () => {
               {link.label}
             </Link>
           ))}
-
-          <Button asChild className="ml-2">
-            <Link to="/contact">Contact</Link>
-          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -85,12 +81,6 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-
-              <Button asChild className="mt-2">
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Contact
-                </Link>
-              </Button>
             </div>
           </div>
         </div>
