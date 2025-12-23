@@ -93,14 +93,14 @@ export default function About() {
           <h2 className="mb-5 text-2xl sm:text-3xl">Technical Approach</h2>
           <div className="space-y-4 prose-body mx-auto">
             <p>
-              Our models are built using established machine learning techniques, trained on 
-              UK-style vehicle and MOT data. We prioritise model interpretability and provide 
+              Our models are built using established machine learning techniques, powered by 
+              live DVSA MOT History data. We prioritise model interpretability and provide 
               clear documentation of our methodologies.
             </p>
             <p>
-              Autodun operates independently and is not affiliated with or endorsed by DVSA 
-              or any government agency. Our tools are intended for research and educational 
-              purposes, providing supplementary analysis rather than official determinations.
+              MOT history is sourced from live DVSA records. Risk predictions are independent 
+              analytics and do not constitute DVSA advice. Autodun is not affiliated with or 
+              endorsed by DVSA or any government agency.
             </p>
             <p>
               The platform is continuously developed, with ongoing work to improve model 

@@ -17,9 +17,9 @@ const tools = [
     icon: BarChart3,
     title: "MOT Failure Risk Predictor",
     description:
-      "AI-driven risk estimation based on vehicle characteristics and MOT history.",
+      "Powered by live DVSA MOT History data with independent risk analytics.",
     href: "https://mot.autodun.com",
-    badge: "Beta",
+    badge: "Active",
   },
   {
     icon: MapPin,
@@ -92,12 +92,12 @@ export default function Index() {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 justify-center lg:justify-start text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5">
                   <Shield className="h-4 w-4" />
-                  Research-grade models
+                  Live DVSA data
                 </span>
                 <span className="hidden sm:inline">•</span>
-                <span>UK-focused data</span>
+                <span>UK-focused analytics</span>
                 <span className="hidden sm:inline">•</span>
-                <span>Not official DVSA advice</span>
+                <span>Independent risk analysis</span>
               </div>
             </div>
 

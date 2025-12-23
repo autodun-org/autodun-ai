@@ -34,11 +34,11 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold mb-3">Important Disclaimers</h2>
+              <h2 className="text-xl font-semibold mb-3">Data Sources & Disclaimers</h2>
               <p className="leading-relaxed mb-3">
-                <strong>Not Official Advice:</strong> Autodun tools and data are not official DVSA 
-                (Driver and Vehicle Standards Agency) services. Our predictions and analyses are 
-                research-grade estimates and should not be treated as authoritative guidance.
+                <strong>Live DVSA Data:</strong> Our MOT Predictor is powered by live DVSA MOT 
+                History data. Risk predictions are independent analytics and do not constitute 
+                DVSA advice or endorsement.
               </p>
               <p className="leading-relaxed mb-3">
                 <strong>No Warranty:</strong> Our services are provided "as is" without warranties 
