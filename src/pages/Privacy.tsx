@@ -90,10 +90,10 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold mb-3">Disclaimer</h2>
+              <h2 className="text-xl font-semibold mb-3">Data Sources</h2>
               <p className="leading-relaxed">
-                Autodun provides research-grade tools for informational purposes. Our services are 
-                not official DVSA advice and should not be relied upon as such.
+                Our MOT Predictor is powered by live DVSA MOT History data. Risk predictions are 
+                independent analytics and do not constitute DVSA advice.
               </p>
             </div>
 

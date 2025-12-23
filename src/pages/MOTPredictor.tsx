@@ -24,8 +24,9 @@ export default function MOTPredictor() {
       <section className="section-hero border-b border-border hero-gradient">
         <div className="container-narrow text-center">
           <div className="animate-fade-in-up">
-            <span className="badge-beta mb-5 inline-flex">
-              Beta
+            <span className="badge-active mb-5 inline-flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              Live Data
             </span>
             
             <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
@@ -33,9 +34,9 @@ export default function MOTPredictor() {
             </h1>
             
             <p className="text-lg prose-body mb-8 mx-auto">
-              This tool estimates MOT failure risk using AI models trained on UK-style MOT data. 
-              Input your vehicle details to receive a risk assessment based on statistical patterns 
-              observed in historical test results.
+              Powered by live DVSA MOT History data with independent risk analytics. 
+              Input your vehicle details to receive a risk assessment based on real MOT records 
+              and predictive modelling.
             </p>
           </div>
 
@@ -87,13 +88,13 @@ export default function MOTPredictor() {
         </div>
       </section>
 
-      {/* Research-Grade Disclaimer Banner */}
+      {/* Data Source Banner */}
       <section className="section-compact bg-primary/5 border-y border-primary/10">
         <div className="container-main">
           <div className="flex items-center justify-center gap-4 text-center">
             <Shield className="h-5 w-5 text-primary shrink-0" />
             <p className="text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">Research-grade prediction</span> — This tool provides statistical estimates, not official DVSA advice
+              <span className="font-medium text-foreground">Live DVSA Integration</span> — MOT history sourced from live DVSA records. Risk predictions are independent analytics.
             </p>
           </div>
         </div>
@@ -141,14 +142,14 @@ export default function MOTPredictor() {
           <h2 className="mb-5 text-2xl sm:text-3xl">How the Model Works</h2>
           <div className="space-y-5 prose-body mx-auto">
             <p>
-              The MOT Failure Risk Predictor uses machine learning models trained on historical 
-              UK MOT test data. The model identifies statistical patterns that correlate with 
-              test outcomes.
+              The MOT Failure Risk Predictor uses machine learning models trained on live DVSA 
+              MOT History data. The model identifies statistical patterns that correlate with 
+              test outcomes using real vehicle records.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 text-left">
               <div className="p-4 rounded-xl bg-card border border-border">
-                <h4 className="font-medium text-foreground mb-2 text-sm">Training Data</h4>
-                <p className="text-sm">Historical MOT test results with vehicle characteristics</p>
+                <h4 className="font-medium text-foreground mb-2 text-sm">Data Source</h4>
+                <p className="text-sm">Live DVSA MOT History records for accurate analysis</p>
               </div>
               <div className="p-4 rounded-xl bg-card border border-border">
                 <h4 className="font-medium text-foreground mb-2 text-sm">Output</h4>
@@ -175,15 +176,15 @@ export default function MOTPredictor() {
               <ul className="space-y-2 text-sm prose-body">
                 <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
-                  This is an experimental AI model and results should be interpreted accordingly
+                  MOT history is sourced from live DVSA records
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-amber-700 font-medium">•</span>
+                  Risk predictions are independent analytics and do not constitute DVSA advice
                 </li>
                 <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>
                   Predictions are not an official MOT result or guarantee of test outcome
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-amber-700 font-medium">•</span>
-                  The model provides statistical risk estimates based on historical patterns
                 </li>
                 <li className="flex gap-2">
                   <span className="text-amber-700 font-medium">•</span>

@@ -65,7 +65,7 @@ export const Footer = () => {
           </div>
 
           <p className="text-xs text-muted-foreground">
-            Not official DVSA advice.
+            MOT history sourced from live DVSA records. Risk predictions are independent analytics.
           </p>
         </div>
       </div>
